@@ -50,22 +50,6 @@
     height: 100%;
   }
 
-  .status-bar {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    z-index: 10;
-  }
-
-  .status-time { font-size: 15px; font-weight: 600; color: #fff; }
-
-  .status-icons { display: flex; gap: 5px; align-items: center; }
-  .status-icons svg { width: 15px; height: 15px; fill: #fff; }
-
   /* PROFILE */
   .profile {
     padding: 0 24px 22px;
@@ -161,6 +145,8 @@
   .tab {
     flex: 1;
     text-align: center;
+    background: transparent;
+    border: none;
     padding: 13px 0;
     font-size: 13px;
     font-weight: 500;
@@ -310,23 +296,6 @@
   .tier-pro   { background: #fff8ec; color: #b07a20; border: 1px solid #f0d9a0; }
   .tier-elite { background: #111; color: #fff; }
 
-  /* Coming card */
-  .coming {
-    border: 1.5px dashed var(--border);
-    border-radius: 18px;
-    padding: 28px 20px;
-    text-align: center;
-  }
-
-  .coming-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    color: var(--text);
-    margin-bottom: 7px;
-  }
-
-  .coming-text { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 18px; }
-
   /* ABOUT */
   .about { padding: 24px; }
 
@@ -398,22 +367,14 @@
   <!-- COVER -->
   <div class="cover">
     <canvas id="cvs"></canvas>
-    <div class="status-bar">
-      <span class="status-time">9:41</span>
-      <div class="status-icons">
-        <svg viewBox="0 0 20 14"><rect x="0" y="7" width="3" height="7" rx="0.5"/><rect x="4.5" y="4.5" width="3" height="9.5" rx="0.5"/><rect x="9" y="2" width="3" height="12" rx="0.5"/><rect x="13.5" y="0" width="3" height="14" rx="0.5"/></svg>
-        <svg viewBox="0 0 20 14"><path d="M1 4a13 13 0 0 1 18 0M4 8a8 8 0 0 1 12 0M7.5 12a3.5 3.5 0 0 1 5 0" stroke="white" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg>
-        <svg viewBox="0 0 24 12"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5" stroke="white" stroke-width="1" fill="none"/><rect x="2" y="2" width="15" height="8" rx="1.5" fill="white"/><path d="M22 4v4a2 2 0 0 0 0-4z" fill="white"/></svg>
-      </div>
-    </div>
   </div>
 
   <!-- PROFILE -->
   <div class="profile">
     <div class="avatar-row">
       <div class="avatar">FD</div>
-      <a href="https://www.instagram.com/_fatihdurmz?igsh=azZ2YWxlNDN4NG5n" target="_blank" class="follow-btn">
-        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-linecap="round"/></svg>
+      <a href="https://www.instagram.com/_fatihdurmz?igsh=azZ2YWxlNDN4NG5n" target="_blank" rel="noopener noreferrer" class="follow-btn">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-linecap="round"/></svg>
         Follow on Instagram
       </a>
     </div>
@@ -434,9 +395,9 @@
   </div>
 
   <!-- TABS -->
-  <div class="tabs">
-    <div class="tab active" data-tab="apps">Apps</div>
-    <div class="tab" data-tab="about">About</div>
+  <div class="tabs" role="tablist" aria-label="Sections">
+    <button class="tab active" data-tab="apps" role="tab" aria-selected="true" aria-controls="panel-apps" type="button">Apps</button>
+    <button class="tab" data-tab="about" role="tab" aria-selected="false" aria-controls="panel-about" type="button">About</button>
   </div>
 
   <!-- APPS -->
@@ -463,18 +424,13 @@
           <div class="feat">Live LONG &amp; SHORT signals with entry / TP / SL levels and R/R ratio</div>
           <div class="feat">Z-Score system across RSI, MACD, Bollinger Bands, Ichimoku &amp; more</div>
           <div class="feat">Multi-timeframe analysis — 15m · 1h · 4h · 1D · 1W</div>
-          <div class="feat">ATR-based risk tab with entry zones per timeframe</div>
-          <div class="feat">Crypto news feed (CoinTelegraph TR / EN)</div>
-          <div class="feat">Google Auth + tiered membership system</div>
         </div>
 
         <div class="tags">
           <span class="tag">Flutter</span>
           <span class="tag">Dart</span>
           <span class="tag">Firebase</span>
-          <span class="tag">Binance API</span>
           <span class="tag">WebSocket</span>
-          <span class="tag">Technical Analysis</span>
         </div>
 
         <div class="tier-row">
@@ -484,14 +440,6 @@
         </div>
       </div>
 
-      <div class="coming">
-        <div class="coming-title">More coming soon</div>
-        <div class="coming-text">Follow on Instagram to be the first to know when new apps launch.</div>
-        <a href="https://www.instagram.com/_fatihdurmz?igsh=azZ2YWxlNDN4NG5n" target="_blank" class="follow-btn" style="margin: 0 auto; width: fit-content;">
-          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          Follow
-        </a>
-      </div>
     </div>
   </div>
 
@@ -518,8 +466,8 @@
 
       <div class="about-block">
         <div class="about-label">Contact</div>
-        <a href="https://www.instagram.com/_fatihdurmz?igsh=azZ2YWxlNDN4NG5n" target="_blank" class="contact-link">
-          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        <a href="https://www.instagram.com/_fatihdurmz?igsh=azZ2YWxlNDN4NG5n" target="_blank" rel="noopener noreferrer" class="contact-link">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
           <div>
             @fatihdurmz
             <div class="contact-sub">Instagram · DMs open</div>
@@ -538,7 +486,9 @@
     tab.addEventListener('click', () => {
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
       document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', 'false'));
       tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
       document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
     });
   });
@@ -571,6 +521,8 @@
     r: 0.5 + Math.random() * 1.2,
     a: 0.06 + Math.random() * 0.15,
   }));
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   let t = 0;
   function draw() {
@@ -612,7 +564,7 @@
     ctx.fillStyle = vg;
     ctx.fillRect(0, 0, w, h);
 
-    requestAnimationFrame(draw);
+    if (!reduceMotion) requestAnimationFrame(draw);
   }
   requestAnimationFrame(draw);
 </script>
