@@ -1,572 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fatih Durmaz — Mobile Developer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #ffffff;
-    --surface: #f7f7f5;
-    --surface2: #f0f0ed;
-    --border: #e8e8e4;
-    --text: #111111;
-    --muted: #888880;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fatih Durmaz | Novira Finance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fcfcfc;
+      --card-bg: #ffffff;
+      --line: #efefef;
+      --text: #1a1a1a;
+      --muted: #666666;
+      --accent: #000000;
+      --highlight: #f4f4f5;
+    }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Outfit', sans-serif;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-  }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      display: flex;
+      justify-content: center;
+      line-height: 1.6;
+    }
 
-  .wrap {
-    width: 100%;
-    max-width: 440px;
-    min-height: 100vh;
-    background: var(--bg);
-  }
+    .wrap {
+      width: 100%;
+      max-width: 440px;
+      padding: 40px 20px;
+    }
 
-  /* COVER */
-  .cover {
-    width: 100%;
-    height: 200px;
-    background: #111;
-    position: relative;
-    overflow: hidden;
-  }
+    .hero {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-  .cover canvas {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-  }
+    .avatar {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(135deg, #eee 0%, #fff 100%);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
 
-  /* PROFILE */
-  .profile {
-    padding: 0 24px 22px;
-    margin-top: -44px;
-    animation: fadeUp 0.45s ease 0.05s both;
-  }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
 
-  .avatar-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 16px;
-  }
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
 
-  .avatar {
-    width: 78px; height: 78px;
-    border-radius: 20px;
-    background: #fff;
-    border: 3px solid #fff;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.13);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 600;
-    color: #111;
-  }
+    .meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
 
-  .follow-btn {
-    height: 38px;
-    padding: 0 20px;
-    border-radius: 50px;
-    background: #111;
-    border: none;
-    color: #fff;
-    font-family: 'Outfit', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    transition: all 0.2s;
-    letter-spacing: 0.02em;
-    white-space: nowrap;
-  }
+    .cta-box {
+      background: var(--highlight);
+      border: 1px solid var(--line);
+      padding: 14px;
+      border-radius: 14px;
+      font-size: 0.85rem;
+      color: var(--text);
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 400;
+    }
 
-  .follow-btn:hover {
-    background: #2a2a2a;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.16);
-  }
+    .social {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 35px;
+    }
 
-  .follow-btn svg { width: 14px; height: 14px; stroke: #fff; fill: none; stroke-width: 1.8; }
+    .icon-link {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+      background: var(--card-bg);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
 
-  .profile-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 3px;
-  }
+    .icon-link:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
 
-  .profile-handle { font-size: 13px; color: var(--muted); margin-bottom: 13px; }
+    .tabs {
+      display: flex;
+      gap: 6px;
+      background: #ededed;
+      padding: 4px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
 
-  .profile-bio { font-size: 14px; line-height: 1.65; color: #555; margin-bottom: 12px; }
+    .tab {
+      flex: 1;
+      border: none;
+      padding: 10px;
+      border-radius: 9px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--muted);
+      background: transparent;
+      transition: all 0.2s;
+    }
 
-  .chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 12px;
-    color: var(--muted);
-    border: 1px solid var(--border);
-    padding: 4px 10px;
-    border-radius: 50px;
-    margin-right: 6px;
-    margin-bottom: 6px;
-  }
+    .tab.active {
+      background: var(--card-bg);
+      color: var(--accent);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
 
-  .chip svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2; }
+    .panel { display: none; }
+    .panel.active { display: block; animation: fadeIn 0.3s ease; }
 
-  /* TABS */
-  .tabs {
-    display: flex;
-    border-bottom: 1.5px solid var(--border);
-    padding: 0 24px;
-    animation: fadeUp 0.45s ease 0.12s both;
-  }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
 
-  .tab {
-    flex: 1;
-    text-align: center;
-    background: transparent;
-    border: none;
-    padding: 13px 0;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--muted);
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    position: relative;
-    bottom: -1.5px;
-    transition: color 0.2s;
-    letter-spacing: 0.02em;
-  }
+    .card-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
 
-  .tab.active { color: var(--text); border-bottom-color: var(--text); font-weight: 600; }
+    .card h2 { font-size: 1.1rem; font-weight: 600; }
 
-  /* PANELS */
-  .panel { display: none; }
-  .panel.active { display: block; animation: fadeUp 0.35s ease both; }
+    .badge {
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      background: #f0fdf4;
+      color: #166534;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
 
-  /* APPS */
-  .apps { padding: 24px; }
+    .feature-list {
+      list-style: none;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 15px;
+    }
 
-  .eyebrow {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: var(--muted);
-    margin-bottom: 18px;
-    font-weight: 500;
-  }
+    .feature-list li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
 
-  .app-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 20px;
-    margin-bottom: 14px;
-    transition: all 0.22s ease;
-  }
+    .feature-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
 
-  .app-card:hover {
-    border-color: #ccc;
-    box-shadow: 0 6px 28px rgba(0,0,0,0.07);
-    transform: translateY(-2px);
-  }
+    .sub-info {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid var(--line);
+    }
 
-  .app-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    margin-bottom: 14px;
-  }
-
-  .app-icon {
-    width: 54px; height: 54px;
-    border-radius: 14px;
-    background: #111;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 26px;
-    flex-shrink: 0;
-  }
-
-  .app-meta { flex: 1; min-width: 0; }
-
-  .app-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 4px;
-  }
-
-  .app-sub {
-    font-size: 12px;
-    color: var(--muted);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-
-  .app-sub svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2; }
-
-  .badge {
-    font-size: 11px;
-    padding: 3px 10px;
-    border-radius: 50px;
-    font-weight: 500;
-    white-space: nowrap;
-    align-self: flex-start;
-  }
-
-  .badge-dev { background: #f5f0e8; color: #8a6b30; border: 1px solid #e8d9b8; }
-
-  .app-desc { font-size: 13.5px; line-height: 1.65; color: #666; margin-bottom: 14px; }
-
-  .features { display: flex; flex-direction: column; gap: 7px; margin-bottom: 14px; }
-
-  .feat {
-    display: flex;
-    align-items: flex-start;
-    gap: 9px;
-    font-size: 13px;
-    color: #555;
-    line-height: 1.5;
-  }
-
-  .feat::before {
-    content: '';
-    width: 4px; height: 4px;
-    border-radius: 50%;
-    background: #bbb;
-    margin-top: 7px;
-    flex-shrink: 0;
-  }
-
-  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-
-  .tag {
-    font-size: 11px;
-    padding: 3px 10px;
-    border-radius: 50px;
-    background: var(--surface2);
-    color: var(--muted);
-    border: 1px solid var(--border);
-  }
-
-  .tier-row {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    margin-top: 14px;
-    padding-top: 14px;
-    border-top: 1px solid var(--border);
-  }
-
-  .tier {
-    font-size: 10.5px;
-    padding: 3px 10px;
-    border-radius: 50px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-
-  .tier-free  { background: #f5f5f5; color: #777; border: 1px solid #e0e0e0; }
-  .tier-pro   { background: #fff8ec; color: #b07a20; border: 1px solid #f0d9a0; }
-  .tier-elite { background: #111; color: #fff; }
-
-  /* ABOUT */
-  .about { padding: 24px; }
-
-  .about-block { margin-bottom: 28px; }
-
-  .about-label {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: var(--muted);
-    font-weight: 500;
-    margin-bottom: 10px;
-  }
-
-  .about-text { font-size: 14px; line-height: 1.75; color: #555; }
-
-  .skill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-
-  .skill-item {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 12px 14px;
-    font-size: 13px;
-    color: var(--text);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .contact-link {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 16px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    text-decoration: none;
-    color: var(--text);
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 10px;
-    transition: all 0.2s;
-  }
-
-  .contact-link:hover {
-    border-color: #bbb;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-    transform: translateY(-1px);
-  }
-
-  .contact-link svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.8; flex-shrink: 0; }
-  .contact-sub { font-size: 12px; color: var(--muted); font-weight: 400; }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(14px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  ::-webkit-scrollbar { width: 0; }
-
-  @media (max-width: 480px) { .wrap { max-width: 100%; } }
-</style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
+
 <div class="wrap">
+  <header class="hero">
+    <div class="avatar">
+      <img src="profile.jpeg" alt="Fatih Durmaz">
+    </div>
+    <h1>Fatih Durmaz</h1>
+    <p class="meta">@fatihdurmz • Mobile Developer</p>
+    
+    <div class="cta-box">
+      Don't forget to follow my social media accounts for instant updates and to be among the first to use <b>Novira Finance</b>.
+    </div>
 
-  <!-- COVER -->
-  <div class="cover">
-    <canvas id="cvs"></canvas>
-  </div>
-
-  <!-- PROFILE -->
-  <div class="profile">
-    <div class="avatar-row">
-      <div class="avatar">FD</div>
-      <a href="https://www.instagram.com/_fatihdurmz?igsh=azZ2YWxlNDN4NG5n" target="_blank" rel="noopener noreferrer" class="follow-btn">
-        <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-linecap="round"/></svg>
-        Follow on Instagram
+    <div class="social">
+      <a class="icon-link" href="https://instagram.com/_fatihdurmz" target="_blank" aria-label="Instagram">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+      </a>
+      <a class="icon-link" href="https://youtube.com/@fatihdurmaz8232" target="_blank" aria-label="YouTube">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
       </a>
     </div>
+  </header>
 
-    <div class="profile-name">Fatih Durmaz</div>
-    <div class="profile-handle">@fatihdurmz</div>
-    <p class="profile-bio">Mobile developer building Android applications focused on clean UX and real-time data.</p>
-    <div>
-      <span class="chip">
-        <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
-        Android
-      </span>
-      <span class="chip">
-        <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        Flutter · Firebase
-      </span>
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="apps" role="tab" aria-selected="true">App Features</button>
+    <button class="tab" data-tab="about" role="tab" aria-selected="false">About Me</button>
+  </nav>
+
+  <main>
+    <div class="panel active" id="panel-apps" role="tabpanel">
+      <article class="card">
+        <div class="card-title-row">
+          <h2>Novira Finance</h2>
+          <span class="badge">Beta Development</span>
+        </div>
+        
+        <p style="font-size: 0.9rem; color: var(--text); font-weight: 500;">Professional technical analysis power for beginners.</p>
+        
+        <ul class="feature-list">
+          <li><b>Technical Scoring:</b> Real-time confidence score (0-100) for 1000+ coins.</li>
+          <li><b>VIP Signals:</b> Volume-based Top 200 coins with strict LONG/SHORT filters.</li>
+          <li><b>Wide Periods:</b> Comprehensive analysis from 15m up to 1-Week (1W) intervals.</li>
+          <li><b>3-Pronged Analysis:</b> Hybrid system with 15+ indicators working in sync.</li>
+          <li><b>Academy & News:</b> In-app education modules and multi-language news feed.</li>
+        </ul>
+
+        <div class="sub-info">
+          Support for 1000+ assets with built-in ATR-based risk management.
+        </div>
+      </article>
     </div>
-  </div>
 
-  <!-- TABS -->
-  <div class="tabs" role="tablist" aria-label="Sections">
-    <button class="tab active" data-tab="apps" role="tab" aria-selected="true" aria-controls="panel-apps" type="button">Apps</button>
-    <button class="tab" data-tab="about" role="tab" aria-selected="false" aria-controls="panel-about" type="button">About</button>
-  </div>
-
-  <!-- APPS -->
-  <div class="panel active" id="panel-apps">
-    <div class="apps">
-      <div class="eyebrow">Projects</div>
-
-      <div class="app-card">
-        <div class="app-header">
-          <div class="app-icon">📊</div>
-          <div class="app-meta">
-            <div class="app-name">Novira Finans</div>
-            <div class="app-sub">
-              <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
-              Android · Flutter
-            </div>
-          </div>
-          <span class="badge badge-dev">In Development</span>
-        </div>
-
-        <p class="app-desc">A crypto analysis app delivering real-time market signals with institutional-grade indicators. Powered by Binance WebSocket and Firebase.</p>
-
-        <div class="features">
-          <div class="feat">Live LONG &amp; SHORT signals with entry / TP / SL levels and R/R ratio</div>
-          <div class="feat">Z-Score system across RSI, MACD, Bollinger Bands, Ichimoku &amp; more</div>
-          <div class="feat">Multi-timeframe analysis — 15m · 1h · 4h · 1D · 1W</div>
-        </div>
-
-        <div class="tags">
-          <span class="tag">Flutter</span>
-          <span class="tag">Dart</span>
-          <span class="tag">Firebase</span>
-          <span class="tag">WebSocket</span>
-        </div>
-
-        <div class="tier-row">
-          <span class="tier tier-free">Free</span>
-          <span class="tier tier-pro">Pro — ₺250 / mo</span>
-          <span class="tier tier-elite">Elite — ₺500 / mo</span>
-        </div>
+    <div class="panel" id="panel-about" role="tabpanel">
+      <div class="card">
+        <p style="font-size: 1rem; margin-bottom: 12px; font-weight: 600;">Sharing My Personal Investment Guide.</p>
+        <p style="font-size: 0.93rem; margin-bottom: 12px; color: var(--text);">Novira Finance is a project to bring the professional tools I developed for my own portfolio management to everyone.</p>
+        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 12px;">It serves as a <b>comprehensive guide</b> for those new to crypto or for busy professionals who lack the time to monitor markets all day.</p>
+        <p style="font-size: 0.9rem; color: var(--muted);">My mission is to transform complex financial data into a simple, actionable strategy for every investor.</p>
       </div>
-
     </div>
-  </div>
-
-  <!-- ABOUT -->
-  <div class="panel" id="panel-about">
-    <div class="about">
-
-      <div class="about-block">
-        <div class="about-label">About</div>
-        <div class="about-text">Self-taught mobile developer focused on Android. I build apps around real-time data, clean interfaces, and practical user value — currently deep in the fintech space.</div>
-      </div>
-
-      <div class="about-block">
-        <div class="about-label">Stack</div>
-        <div class="skill-grid">
-          <div class="skill-item">🐦 Flutter</div>
-          <div class="skill-item">🔥 Firebase</div>
-          <div class="skill-item">📡 WebSocket</div>
-          <div class="skill-item">☁️ REST APIs</div>
-          <div class="skill-item">🎨 UI / UX</div>
-          <div class="skill-item">🔐 Auth Systems</div>
-        </div>
-      </div>
-
-      <div class="about-block">
-        <div class="about-label">Contact</div>
-        <a href="https://www.instagram.com/_fatihdurmz?igsh=azZ2YWxlNDN4NG5n" target="_blank" rel="noopener noreferrer" class="contact-link">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          <div>
-            @fatihdurmz
-            <div class="contact-sub">Instagram · DMs open</div>
-          </div>
-        </a>
-      </div>
-
-    </div>
-  </div>
-
+  </main>
 </div>
 
 <script>
-  // TABS
-  document.querySelectorAll('.tab').forEach(tab => {
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.panel');
+
+  tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', 'false'));
+      const target = tab.dataset.tab;
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
       tab.classList.add('active');
-      tab.setAttribute('aria-selected', 'true');
-      document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+      document.getElementById(`panel-${target}`).classList.add('active');
     });
   });
-
-  // COVER CANVAS
-  const cvs = document.getElementById('cvs');
-  const ctx = cvs.getContext('2d');
-
-  function resize() {
-    cvs.width  = cvs.parentElement.offsetWidth;
-    cvs.height = cvs.parentElement.offsetHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  const W = () => cvs.width, H = () => cvs.height;
-
-  const lines = Array.from({length: 12}, () => ({
-    y:       Math.random(),
-    speed:   0.008 + Math.random() * 0.012,
-    alpha:   0.05 + Math.random() * 0.09,
-    lw:      0.4 + Math.random() * 0.7,
-    wave:    Math.random() * Math.PI * 2,
-    wFreq:   0.0003 + Math.random() * 0.0004,
-    wAmp:    4 + Math.random() * 10,
-  }));
-
-  const pts = Array.from({length: 25}, () => ({
-    x: Math.random(), y: Math.random(),
-    r: 0.5 + Math.random() * 1.2,
-    a: 0.06 + Math.random() * 0.15,
-  }));
-
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  let t = 0;
-  function draw() {
-    t++;
-    const w = W(), h = H();
-    ctx.clearRect(0, 0, w, h);
-
-    // bg
-    const bg = ctx.createLinearGradient(0, 0, w, h);
-    bg.addColorStop(0, '#0d0d0d');
-    bg.addColorStop(1, '#1c1c1c');
-    ctx.fillStyle = bg;
-    ctx.fillRect(0, 0, w, h);
-
-    // lines
-    lines.forEach(l => {
-      const y = ((l.y + l.speed * t * 0.01) % 1.2 - 0.1) * h;
-      const wave = Math.sin(t * l.wFreq + l.wave) * l.wAmp;
-      ctx.strokeStyle = `rgba(255,255,255,${l.alpha})`;
-      ctx.lineWidth = l.lw;
-      ctx.beginPath();
-      ctx.moveTo(0, y + wave);
-      ctx.lineTo(w, y - wave);
-      ctx.stroke();
-    });
-
-    // dots
-    pts.forEach(p => {
-      ctx.fillStyle = `rgba(255,255,255,${p.a})`;
-      ctx.beginPath();
-      ctx.arc(p.x * w, p.y * h, p.r, 0, Math.PI * 2);
-      ctx.fill();
-    });
-
-    // vignette
-    const vg = ctx.createRadialGradient(w/2, h/2, h*0.15, w/2, h/2, h*1.1);
-    vg.addColorStop(0, 'rgba(0,0,0,0)');
-    vg.addColorStop(1, 'rgba(0,0,0,0.5)');
-    ctx.fillStyle = vg;
-    ctx.fillRect(0, 0, w, h);
-
-    if (!reduceMotion) requestAnimationFrame(draw);
-  }
-  requestAnimationFrame(draw);
 </script>
+
 </body>
 </html>
