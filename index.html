@@ -22,14 +22,17 @@
         }
     </script>
     <style>
-        body { background-color: #0B0F19; font-family: 'Inter', sans-serif; }
+        body { background-color: #0B0F19; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .gradient-text {
             background: linear-gradient(to right, #FFFFFF, #A78BFA);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .glow-effect {
-            box-shadow: 0 0 25px -5px rgba(124, 58, 237, 0.4);
+            box-shadow: 0 0 30px -5px rgba(124, 58, 237, 0.3);
+        }
+        .glow-green {
+            box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.2);
         }
     </style>
 </head>
@@ -43,12 +46,13 @@
                 </span>
             </div>
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#features" class="text-gray-400 hover:text-white transition">Features</a>
-                <a href="#indicators" class="text-gray-400 hover:text-white transition">Indicators</a>
-                <a href="#ai-analysis" class="text-gray-400 hover:text-white transition">AI Insights</a>
+                <a href="#overview" class="text-gray-400 hover:text-white transition">Overview</a>
+                <a href="#signals" class="text-gray-400 hover:text-white transition">Smart Signals</a>
+                <a href="#analysis" class="text-gray-400 hover:text-white transition">AI Insights</a>
+                <a href="#risk" class="text-gray-400 hover:text-white transition">Risk Management</a>
                 <div class="relative group">
                     <button class="text-gray-400 group-hover:text-white transition flex items-center gap-1">
-                        Our Ecosystem <i class="fa-solid fa-chevron-down text-xs"></i>
+                        Ecosystem <i class="fa-solid fa-chevron-down text-xs"></i>
                     </button>
                     <div class="absolute right-0 mt-2 w-48 bg-brandCard border border-gray-800 rounded-lg shadow-xl opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition duration-200">
                         <a href="#" class="block px-4 py-2 text-sm text-brandPurple font-semibold bg-brandPurple/10">Novira Trade (Live)</a>
@@ -62,8 +66,8 @@
         </div>
     </nav>
 
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-12 items-center">
-        <div class="md:col-span-7 space-y-6">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 grid md:grid-cols-12 gap-12 items-center">
+        <div class="md:col-span-6 space-y-6">
             <span class="text-xs font-semibold uppercase tracking-widest text-brandPurple bg-brandPurple/10 px-3 py-1 rounded-full border border-brandPurple/30">
                 AI-Powered. Data-Driven. Emotion-Free.
             </span>
@@ -73,117 +77,98 @@
                 Stronger Results.
             </h1>
             <p class="text-gray-400 text-lg max-w-xl">
-                All-in-one trading platform that removes emotions and helps you make data-backed decisions with AI-powered analysis.
+                All-in-one trading platform that removes emotions and helps you make data-backed decisions with advanced metrics.
             </p>
-            
-            <div class="grid sm:grid-cols-2 gap-4 pt-4">
-                <div class="flex items-start space-x-3">
-                    <div class="bg-brandPurple/20 p-2 rounded-lg text-brandPurple mt-1"><i class="fa-solid fa-brain-circuit"></i></div>
-                    <div><h4 class="font-semibold text-white">Remove Emotion</h4><p class="text-xs text-gray-400">Rational decisions based on data.</p></div>
-                </div>
-                <div class="flex items-start space-x-3">
-                    <div class="bg-brandPurple/20 p-2 rounded-lg text-brandPurple mt-1"><i class="fa-solid fa-chart-line"></i></div>
-                    <div><h4 class="font-semibold text-white">Advanced Analysis</h4><p class="text-xs text-gray-400">Access 20+ professional indicators.</p></div>
-                </div>
-                <div class="flex items-start space-x-3">
-                    <div class="bg-brandPurple/20 p-2 rounded-lg text-brandPurple mt-1"><i class="fa-solid fa-robot"></i></div>
-                    <div><h4 class="font-semibold text-white">AI-Powered Insights</h4><p class="text-xs text-gray-400">Get AI-driven predictions & trade ideas.</p></div>
-                </div>
-                <div class="flex items-start space-x-3">
-                    <div class="bg-brandPurple/20 p-2 rounded-lg text-brandPurple mt-1"><i class="fa-solid fa-shield-halved"></i></div>
-                    <div><h4 class="font-semibold text-white">Risk Management</h4><p class="text-xs text-gray-400">Protect your capital with smart sizing.</p></div>
-                </div>
+            <div class="flex flex-wrap gap-4 pt-2">
+                <a href="#overview" class="bg-brandPurple hover:bg-purple-700 text-white px-6 py-3 rounded-xl font-medium transition duration-200 shadow-lg shadow-brandPurple/20">Explore Features</a>
+                <a href="#download" class="border border-gray-700 hover:border-gray-500 text-white px-6 py-3 rounded-xl font-medium transition duration-200">Get The App</a>
             </div>
         </div>
 
-        <div class="md:col-span-5 relative flex justify-center">
+        <div class="md:col-span-6 relative flex justify-center">
             <div class="absolute inset-0 bg-brandPurple/10 rounded-full filter blur-3xl w-72 h-72 mx-auto my-auto"></div>
-            <img src="97710474-9e07-41c7-8a74-6e87f3f15886.png" alt="Novira Trade App Showcase" class="relative z-10 w-full max-w-sm rounded-2xl glow-effect transition transform hover:scale-105 duration-300">
+            <img src="97710474-9e07-41c7-8a74-6e87f3f15886.png" alt="Novira Trade Showcase" class="relative z-10 w-full rounded-2xl glow-effect transition transform hover:scale-[1.02] duration-300">
         </div>
     </section>
 
-    <section id="indicators" class="bg-brandCard/40 border-y border-gray-800 py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2 uppercase tracking-wide text-brandPurple">20+ Professional Indicators & Tools</h2>
-            <p class="text-gray-400 mb-12 max-w-2xl mx-auto text-sm">Every indicator you need to master the markets, integrated into a single unified workspace.</p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                <div class="bg-brandCard border border-gray-800 p-4 rounded-xl text-left hover:border-brandPurple/50 transition group cursor-pointer">
-                    <div class="text-brandPurple text-xl mb-2 group-hover:scale-110 transition duration-200"><i class="fa-solid fa-wave-square"></i></div>
-                    <h3 class="font-bold text-white text-sm">RSI</h3>
-                    <p class="text-xs text-gray-400 mt-1">Relative Strength Index</p>
+    <section id="overview" class="bg-brandCard/30 border-y border-gray-800 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-5 order-2 md:order-1 flex justify-center">
+                <div class="p-2 bg-gray-900 border-4 border-gray-800 rounded-[2.5rem] shadow-2xl max-w-[280px]">
+                    <img src="09ec3ada-f4d8-4af1-9cf8-f490ce389937.png" alt="Markets Screen" class="rounded-[2.2rem]">
                 </div>
-                <div class="bg-brandCard border border-gray-800 p-4 rounded-xl text-left hover:border-brandPurple/50 transition group cursor-pointer">
-                    <div class="text-brandPurple text-xl mb-2 group-hover:scale-110 transition duration-200"><i class="fa-solid fa-chart-bar"></i></div>
-                    <h3 class="font-bold text-white text-sm">MACD</h3>
-                    <p class="text-xs text-gray-400 mt-1">Moving Average Convergence</p>
-                </div>
-                <div class="bg-brandCard border border-gray-800 p-4 rounded-xl text-left hover:border-brandPurple/50 transition group cursor-pointer">
-                    <div class="text-brandPurple text-xl mb-2 group-hover:scale-110 transition duration-200"><i class="fa-solid fa-circle-nodes"></i></div>
-                    <h3 class="font-bold text-white text-sm">Bollinger Bands</h3>
-                    <p class="text-xs text-gray-400 mt-1">Volatility Channels</p>
-                </div>
-                <div class="bg-brandCard border border-gray-800 p-4 rounded-xl text-left hover:border-brandPurple/50 transition group cursor-pointer">
-                    <div class="text-brandPurple text-xl mb-2 group-hover:scale-110 transition duration-200"><i class="fa-solid fa-arrows-left-right"></i></div>
-                    <h3 class="font-bold text-white text-sm">Support & Resistance</h3>
-                    <p class="text-xs text-gray-400 mt-1">Key Levels Detection</p>
-                </div>
-                <div class="bg-brandCard border border-gray-800 p-4 rounded-xl text-left hover:border-brandPurple/50 transition group cursor-pointer">
-                    <div class="text-brandPurple text-xl mb-2 group-hover:scale-110 transition duration-200"><i class="fa-solid fa-draw-polygon"></i></div>
-                    <h3 class="font-bold text-white text-sm">Fibonacci</h3>
-                    <p class="text-xs text-gray-400 mt-1">Retreament & Extension</p>
-                </div>
-                </div>
-        </div>
-    </section>
-
-    <section id="features" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid md:grid-cols-3 gap-6">
-        <div class="bg-brandCard border border-gray-800 p-6 rounded-xl space-y-4">
-            <span class="bg-brandPurple/20 text-brandPurple text-xs px-2.5 py-1 rounded font-mono">15m | 1h | 4h | 1d | 1w</span>
-            <h3 class="text-xl font-bold text-white">Trade Smarter Across Timeframes</h3>
-            <p class="text-sm text-gray-400">Get precise entry and exit levels from 15m to 1w. Perfect for scalp, swing and long-term traders.</p>
-        </div>
-        <div class="bg-brandCard border border-gray-800 p-6 rounded-xl space-y-4">
-            <div class="text-brandPurple text-2xl"><i class="fa-regular fa-clock"></i></div>
-            <h3 class="text-xl font-bold text-white">Built For Every Trader</h3>
-            <p class="text-sm text-gray-400">Scalpers get lightning-fast accurate signals, while positional investors get macro trend analysis.</p>
-        </div>
-        <div class="bg-brandCard border border-brandPurple/40 p-6 rounded-xl space-y-4 relative overflow-hidden glow-effect">
-            <div class="absolute right-0 top-0 opacity-10 text-7xl text-brandPurple p-2"><i class="fa-solid fa-robot"></i></div>
-            <div class="text-brandPurple text-2xl"><i class="fa-solid fa-robot"></i></div>
-            <h3 class="text-xl font-bold text-white">AI-Powered Analysis</h3>
-            <p class="text-sm text-gray-400">Our AI scans the market 24/7, analyzing multiple indicators and on-chain data for high-probability setups.</p>
-        </div>
-    </section>
-
-    <section id="ai-analysis" class="bg-white text-brandDark py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
-            <div class="space-y-3">
-                <h3 class="text-lg font-bold text-brandPurple uppercase tracking-wider">Designed to Remove Bias</h3>
-                <ul class="space-y-2 text-sm text-gray-700 font-medium">
-                    <li><i class="fa-solid fa-circle-check text-brandGreen mr-2"></i> No emotions. Just logic.</li>
-                    <li><i class="fa-solid fa-circle-check text-brandGreen mr-2"></i> Data-driven analysis.</li>
-                    <li><i class="fa-solid fa-circle-check text-brandGreen mr-2"></i> Consistent results.</li>
-                </ul>
             </div>
-            <div class="space-y-3">
-                <h3 class="text-lg font-bold text-brandPurple uppercase tracking-wider">Smart Risk Management</h3>
-                <ul class="space-y-2 text-sm text-gray-700 font-medium">
-                    <li><i class="fa-solid fa-circle-check text-brandGreen mr-2"></i> Automated Position Sizing</li>
-                    <li><i class="fa-solid fa-circle-check text-brandGreen mr-2"></i> Risk/Reward Calculator</li>
-                    <li><i class="fa-solid fa-circle-check text-brandGreen mr-2"></i> Capital Preservation First</li>
-                </ul>
-            </div>
-            <div class="space-y-3">
-                <h3 class="text-lg font-bold text-brandPurple uppercase tracking-wider">News & Updates</h3>
-                <p class="text-sm text-gray-600">Stay ahead with real-time news, economic events, and market updates—all integrated into your dashboard.</p>
+            <div class="md:col-span-7 order-1 md:order-2 space-y-5">
+                <div class="text-brandPurple text-3xl"><i class="fa-solid fa-chart-line"></i></div>
+                <h2 class="text-3xl font-black text-white">Live Crypto Market Overview</h2>
+                <p class="text-gray-400 text-base leading-relaxed">
+                    Track the global crypto markets in real-time. Monitor dominance, volume changes, and price actions across top-tier asset pairs with zero latency. Stay on top of volatility before it happens.
+                </p>
+                <div class="grid grid-cols-2 gap-4 pt-2">
+                    <div class="border-l-2 border-brandPurple pl-4"><h4 class="font-bold text-white text-sm">Real-Time Data</h4><p class="text-xs text-gray-400">Instant tracking of market shifts.</p></div>
+                    <div class="border-l-2 border-brandPurple pl-4"><h4 class="font-bold text-white text-sm">Clean Workspace</h4><p class="text-xs text-gray-400">No clutter, just essential data.</p></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="download" class="max-w-5xl mx-auto px-4 py-16 text-center space-y-6">
+    <section id="signals" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-7 space-y-5">
+                <div class="text-brandGreen text-3xl"><i class="fa-solid fa-bolt"></i></div>
+                <h2 class="text-3xl font-black text-white">Actionable Scalp & Swing Signals</h2>
+                <p class="text-gray-400 text-base leading-relaxed">
+                    No more second-guessing. Get crystal-clear entry levels, targets, and Z-Score volatility metrics directly on your dashboard. Designed to pinpoint high-probability Long and Short opportunities across multiple timeframes.
+                </p>
+                <div class="border-l-2 border-brandGreen pl-4"><h4 class="font-bold text-white text-sm">Z-Score Confirmation</h4><p class="text-xs text-gray-400">Mathematically backed algorithmic triggers.</p></div>
+            </div>
+            <div class="md:col-span-5 flex justify-center">
+                <div class="p-2 bg-gray-900 border-4 border-gray-800 rounded-[2.5rem] shadow-2xl max-w-[280px] glow-green">
+                    <img src="800ddfef-8533-46f5-94f4-6404b88f9ed6.png" alt="Signals Screen" class="rounded-[2.2rem]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="analysis" class="bg-brandCard/30 border-y border-gray-800 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-5 order-2 md:order-1 flex justify-center">
+                <div class="p-2 bg-gray-900 border-4 border-gray-800 rounded-[2.5rem] shadow-2xl max-w-[280px] glow-effect">
+                    <img src="ce313e78-51bf-4228-be83-4c3c7b2ebd04.png" alt="AI Analysis Screen" class="rounded-[2.2rem]">
+                </div>
+            </div>
+            <div class="md:col-span-7 order-1 md:order-2 space-y-5">
+                <div class="text-brandPurple text-3xl"><i class="fa-solid fa-robot"></i></div>
+                <h2 class="text-3xl font-black text-white">AI-Powered Oscillator & Trend Analysis</h2>
+                <p class="text-gray-400 text-base leading-relaxed">
+                    Leverage integrated artificial intelligence to analyze complex oscillators simultaneously. Understand trend strength, overbought/oversold states, and macro conditions without staring at charts for hours.
+                </p>
+                <div class="border-l-2 border-brandPurple pl-4"><h4 class="font-bold text-white text-sm">Automated Confluence</h4><p class="text-xs text-gray-400">AI correlates multiple indicators instantly.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="risk" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-7 space-y-5">
+                <div class="text-brandRed text-3xl"><i class="fa-solid fa-shield-halved"></i></div>
+                <h2 class="text-3xl font-black text-white">Mathematical Risk Management</h2>
+                <p class="text-gray-400 text-base leading-relaxed">
+                    Sustaining capital is the first law of profitable trading. Monitor your precise Win Rates, Average Risk/Reward metrics, and calculate exact liquidation levels before execution. Remove human bias, rely strictly on logic.
+                </p>
+                <div class="border-l-2 border-brandRed pl-4"><h4 class="font-bold text-white text-sm">Capital Protection</h4><p class="text-xs text-gray-400">Deep mathematical positioning parameters.</p></div>
+            </div>
+            <div class="md:col-span-5 flex justify-center">
+                <div class="p-2 bg-gray-900 border-4 border-gray-800 rounded-[2.5rem] shadow-2xl max-w-[280px]">
+                    <img src="f148fc08-1076-4aa9-9871-686eaca0aa9c.png" alt="Risk Screen" class="rounded-[2.2rem]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="max-w-5xl mx-auto px-4 py-16 text-center space-y-6 border-t border-gray-900">
         <h2 class="text-3xl sm:text-4xl font-black text-white">DOWNLOAD NOW</h2>
-        <p class="text-gray-400 max-w-md mx-auto text-sm">All-in-one platform for smarter analysis and better trading. No guesswork. No emotions. Just Data.</p>
+        <p class="text-gray-400 max-w-md mx-auto text-sm">All-in-one platform for smarter analysis and better trading. No guesswork. No emotions. Just Data, Strategy & AI.</p>
         <div class="flex flex-wrap justify-center gap-4 pt-4">
             <a href="#" class="bg-black border border-gray-800 hover:border-gray-600 text-white px-6 py-3 rounded-xl flex items-center space-x-3 transition">
                 <i class="fa-brands fa-apple text-2xl"></i>
@@ -197,7 +182,7 @@
     </section>
 
     <footer class="border-t border-gray-900 bg-brandDark py-6 text-center text-xs text-gray-600">
-        <p>&copy; 2026 Novira Trade. All rights reserved. Built for professional traders.</p>
+        <p>&copy; 2026 Novira Trade. All rights reserved. Trade Smarter. Trade Better.</p>
     </footer>
 
 </body>
