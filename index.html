@@ -1,201 +1,291 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novira Trade - Smarter Analysis, Better Decisions</title>
+    <title>NOVIRA SOFT | Next-Gen Financial & Software Ecosystem</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brandDark: '#0B0F19',
-                        brandCard: '#131A2E',
-                        brandPurple: '#7C3AED',
-                        brandGreen: '#10B981',
-                        brandRed: '#EF4444'
+                        brandBg: '#09090b',
+                        brandSurface: '#18181b',
+                        brandAccent: '#a855f7',
+                        brandTextMuted: '#a1a1aa'
                     }
                 }
             }
         }
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #0B0F19; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        .gradient-text {
-            background: linear-gradient(to right, #FFFFFF, #A78BFA);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .glow-effect {
-            box-shadow: 0 0 30px -5px rgba(124, 58, 237, 0.3);
-        }
-        .glow-green {
-            box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.2);
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #09090b; color: #ffffff; }
+        .dropdown:hover .dropdown-menu { display: block; }
     </style>
 </head>
-<body class="text-gray-200 antialiased selection:bg-brandPurple selection:text-white">
+<body class="antialiased selection:bg-purple-500 selection:text-white">
 
-    <nav class="border-b border-gray-800 bg-brandDark/80 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-                <span class="text-2xl font-bold text-white tracking-wider flex items-center gap-2">
-                    <i class="fa-solid fa-chart-network text-brandPurple"></i> NOVIRA <span class="text-xs bg-brandPurple/20 text-brandPurple px-2 py-0.5 rounded-full">TRADE</span>
-                </span>
-            </div>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#overview" class="text-gray-400 hover:text-white transition">Overview</a>
-                <a href="#signals" class="text-gray-400 hover:text-white transition">Smart Signals</a>
-                <a href="#analysis" class="text-gray-400 hover:text-white transition">AI Insights</a>
-                <a href="#risk" class="text-gray-400 hover:text-white transition">Risk Management</a>
-                <div class="relative group">
-                    <button class="text-gray-400 group-hover:text-white transition flex items-center gap-1">
-                        Ecosystem <i class="fa-solid fa-chevron-down text-xs"></i>
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-brandBg/80 border-b border-zinc-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <span class="text-xl font-bold tracking-tight text-white group-hover:text-brandAccent transition-colors">NOVIRA SOFT</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8">
+                <div class="relative dropdown">
+                    <button class="flex items-center gap-1 text-sm font-medium text-brandTextMuted hover:text-white transition-colors py-2">
+                        Products
+                        <svg class="w-4 h-4 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="absolute right-0 mt-2 w-48 bg-brandCard border border-gray-800 rounded-lg shadow-xl opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition duration-200">
-                        <a href="#" class="block px-4 py-2 text-sm text-brandPurple font-semibold bg-brandPurple/10">Novira Trade (Live)</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-500 cursor-not-allowed">Next Project (Soon)</a>
+                    <div class="absolute left-0 top-full w-64 bg-brandSurface border border-zinc-800 rounded-lg shadow-2xl p-2 hidden dropdown-menu animate-fade-in">
+                        <a href="#novira-trade" class="flex items-start gap-3 p-3 rounded-md hover:bg-zinc-800/50 transition-colors">
+                            <div class="w-2 h-2 rounded-full bg-emerald-500 mt-1.5 shrink-0"></div>
+                            <div>
+                                <p class="text-sm font-medium text-white">Novira Trade</p>
+                                <p class="text-xs text-brandTextMuted mt-0.5">Quantitative Analysis & AI Engine [cite: 3, 7]</p>
+                            </div>
+                        </a>
+                        <div class="flex items-start gap-3 p-3 rounded-md opacity-40 cursor-not-allowed select-none">
+                            <div class="w-2 h-2 rounded-full bg-zinc-600 mt-1.5 shrink-0"></div>
+                            <div>
+                                <p class="text-sm font-medium text-zinc-400">Novira VPN</p>
+                                <p class="text-xs text-zinc-500 mt-0.5">In Development Architecture</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#technology" class="text-sm font-medium text-brandTextMuted hover:text-white transition-colors">Core Technology</a>
+                <a href="#pricing" class="text-sm font-medium text-brandTextMuted hover:text-white transition-colors">Tiers & Licensing</a>
+                <a href="#legal-docs" class="text-sm font-medium text-brandTextMuted hover:text-white transition-colors">Compliance</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="#auth-gateway" class="text-sm font-medium text-brandTextMuted hover:text-white transition-colors hidden sm:block">Sign In</a>
+                <a href="#auth-gateway" class="bg-white text-black text-sm font-medium px-5 py-2.5 rounded-md hover:bg-zinc-200 transition-all shadow-lg hover:shadow-white/5">
+                    Create Account
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="novira-trade" class="relative pt-12 pb-24 lg:pt-20 lg:pb-32 overflow-hidden border-b border-zinc-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-400">
+                            <span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span>
+                            Novira Soft Ecosystem Alpha Release
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-none">
+                            Smarter Analysis.<br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 via-zinc-400 to-zinc-600">Better Decisions.</span><br>
+                            Stronger Results.
+                        </h1>
+                        <p class="text-base sm:text-lg text-brandTextMuted max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                            Novira Trade removes emotional bias from financial operations. Powered by a continuous quantitative engine, the platform synchronizes 20+ professional indicators across multi-timeframe matrices[cite: 3]. Designed for absolute precision, zero human error, and comprehensive data transparency.
+                        </p>
+                        
+                        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <div class="w-full sm:w-auto bg-zinc-900 border border-zinc-800 rounded-lg px-6 py-3 flex items-center justify-between sm:justify-start gap-4 opacity-70">
+                                <div class="text-left">
+                                    <p class="text-xs text-brandTextMuted uppercase font-semibold tracking-wider">Infrastructure Mode</p>
+                                    <p class="text-sm font-medium text-white">Direct Download (Beta APK)</p>
+                                </div>
+                                <span class="text-xs font-mono bg-zinc-800 text-zinc-300 px-2 py-0.5 rounded border border-zinc-700">v1.0.1+6</span> [cite: 1]
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 relative flex justify-center">
+                        <div class="absolute inset-0 bg-gradient-to-b from-purple-500/10 to-transparent blur-3xl rounded-full max-w-lg mx-auto"></div>
+                        <div class="relative w-72 sm:w-80 bg-zinc-950 border-4 border-zinc-800 rounded-[2.5rem] p-3 shadow-2xl shadow-black">
+                            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-4 bg-zinc-800 rounded-b-xl z-20"></div>
+                            <div class="relative rounded-[2rem] overflow-hidden aspect-[9/19.5] bg-zinc-900 border border-zinc-800">
+                                <div class="absolute inset-0 flex items-center justify-center text-xs text-zinc-600 uppercase font-mono tracking-widest p-4 text-center">
+                                    [ Place Premium Application Mockup Image Here ]
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="technology" class="py-24 bg-gradient-to-b from-brandBg via-zinc-950 to-brandBg border-b border-zinc-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-4">
+                    <h2 class="text-xs uppercase font-semibold tracking-widest text-brandAccent">Architectural Integrity</h2>
+                    <p class="text-3xl sm:text-4xl font-bold tracking-tight text-white">Proprietary Engineering. Zero Compromise.</p>
+                    <p class="text-base text-brandTextMuted font-light">
+                        We develop high-performance applications protected by enterprise-grade internal security and specialized algorithmic calculations.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 mt-16">
+                    <div class="bg-brandSurface border border-zinc-800/60 p-8 rounded-xl space-y-4 shadow-xl">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-brandAccent font-bold">01</div>
+                        <h3 class="text-lg font-semibold text-white tracking-tight">Tamper-Detection Infrastructure</h3>
+                        <p class="text-sm text-brandTextMuted leading-relaxed font-light">
+                            Secured via advanced cryptographic validation architectures. Dynamic integrity screening monitors execution layers, instantly shielding user telemetry while identifying and restricting unauthorized reverse engineering behaviors.
+                        </p>
+                    </div>
+
+                    <div class="bg-brandSurface border border-zinc-800/60 p-8 rounded-xl space-y-4 shadow-xl">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-brandAccent font-bold">02</div>
+                        <h3 class="text-lg font-semibold text-white tracking-tight">Confluence Scoring Matrix</h3>
+                        <p class="text-sm text-brandTextMuted leading-relaxed font-light">
+                            Novira Trade utilizes an algorithmic scoring framework that cross-examines 20+ specialized technical indicators simultaneously[cite: 3]. Synthesizing temporal shifts across multiple timeframes, it evaluates confluence targets with institutional accuracy[cite: 3].
+                        </p>
+                    </div>
+
+                    <div class="bg-brandSurface border border-zinc-800/60 p-8 rounded-xl space-y-4 shadow-xl">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-brandAccent font-bold">03</div>
+                        <h3 class="text-lg font-semibold text-white tracking-tight">Mathematical Account Protection</h3>
+                        <p class="text-sm text-brandTextMuted leading-relaxed font-light">
+                            Built explicitly to stabilize portfolio health. The automated mathematical risk engine outputs clear Take-Profit and hard Stop-Loss criteria based on asset volatility indices, allowing execution entirely devoid of psychological turbulence.
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="flex items-center space-x-4">
-                <a href="https://www.instagram.com/_fatihdurmz?igsh=azZ2YWxlNDN4NG5n" target="_blank" class="text-gray-400 hover:text-pink-500 text-xl transition" title="Follow updates on Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="#download" class="bg-brandPurple hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition duration-200 shadow-lg shadow-brandPurple/20">Join Beta</a>
-            </div>
-        </div>
-    </nav>
+        </section>
 
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 grid md:grid-cols-12 gap-12 items-center">
-        <div class="md:col-span-6 space-y-6">
-            <span class="text-xs font-semibold uppercase tracking-widest text-brandPurple bg-brandPurple/10 px-3 py-1 rounded-full border border-brandPurple/30">
-                AI-Powered. Data-Driven. Public Release Coming Soon.
-            </span>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
-                Smarter Analysis.<br>
-                <span class="gradient-text">Better Decisions.</span><br>
-                Stronger Results.
-            </h1>
-            <p class="text-gray-400 text-lg max-w-xl">
-                All-in-one trading platform that removes emotions. Currently in closed beta testing and launching globally very soon. Follow us on Instagram to secure your early access slot!
-            </p>
-            <div class="flex flex-wrap gap-4 pt-2">
-                <a href="https://www.instagram.com/_fatihdurmz?igsh=azZ2YWxlNDN4NG5n" target="_blank" class="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 hover:opacity-90 text-white px-6 py-3 rounded-xl font-medium transition duration-200 shadow-lg flex items-center gap-2">
-                    <i class="fa-brands fa-instagram text-lg"></i> Follow Instagram for Launch Updates
-                </a>
-                <a href="#overview" class="border border-gray-700 hover:border-gray-500 text-white px-6 py-3 rounded-xl font-medium transition duration-200">Explore App Features</a>
-            </div>
-        </div>
+        <section id="pricing" class="py-24 border-b border-zinc-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-4">
+                    <h2 class="text-xs uppercase font-semibold tracking-widest text-brandAccent">Licensing Layers</h2>
+                    <p class="text-3xl sm:text-4xl font-bold tracking-tight text-white">Select Your Operational Tier</p>
+                    <p class="text-base text-brandTextMuted font-light">
+                        Flexible allocations configured to optimize your access to the core quantitative calculation engine.
+                    </p>
+                </div>
 
-        <div class="md:col-span-6 relative flex justify-center">
-            <div class="absolute inset-0 bg-brandPurple/10 rounded-full filter blur-3xl w-72 h-72 mx-auto my-auto"></div>
-            <img src="97710474-9e07-41c7-8a74-6e87f3f15886.png" alt="Novira Trade Showcase" class="relative z-10 w-full rounded-2xl glow-effect transition transform hover:scale-[1.02] duration-300">
-        </div>
-    </section>
+                <div class="grid md:grid-cols-3 gap-8 mt-16 max-w-5xl mx-auto items-stretch">
+                    <div class="bg-brandSurface border border-zinc-800 p-8 rounded-xl flex flex-col justify-between relative shadow-lg">
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-lg font-medium text-white">Free Plan</h3>
+                                <p class="text-xs text-brandTextMuted mt-1">Basic exploratory tier </p>
+                            </div>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-4xl font-bold text-white">0 TL</span>
+                                <span class="text-xs text-brandTextMuted">/ monthly</span>
+                            </div>
+                            <ul class="space-y-3 text-sm text-zinc-300 font-light border-t border-zinc-800 pt-6">
+                                <li class="flex items-center gap-2">✔ Core Confluence Indicator Scores [cite: 3]</li>
+                                <li class="flex items-center gap-2">✔ Standard Calculation Weights </li>
+                                <li class="flex items-center gap-2 text-zinc-600">❌ Advanced Multi-Timeframe Matrix </li>
+                            </ul>
+                        </div>
+                        <div class="mt-8">
+                            <a href="#auth-gateway" class="block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-medium py-3 rounded-md transition-colors">Create Free Account</a>
+                        </div>
+                    </div>
 
-    <section id="overview" class="bg-brandCard/30 border-y border-gray-800 py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-12 items-center">
-            <div class="md:col-span-5 order-2 md:order-1 flex justify-center">
-                <div class="p-2 bg-gray-900 border-4 border-gray-800 rounded-[2.5rem] shadow-2xl max-w-[280px]">
-                    <img src="09ec3ada-f4d8-4af1-9cf8-f490ce389937.png" alt="Markets Screen" class="rounded-[2.2rem]">
+                    <div class="bg-brandSurface border-2 border-brandAccent p-8 rounded-xl flex flex-col justify-between relative shadow-2xl shadow-purple-950/20">
+                        <div class="absolute -top-3 right-4 bg-brandAccent text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">Popular</div>
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-lg font-medium text-white">Pro Plan</h3>
+                                <p class="text-xs text-brandTextMuted mt-1">Extended parameters & deep analysis </p>
+                            </div>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-4xl font-bold text-white">250 TL</span>
+                                <span class="text-xs text-brandTextMuted">/ monthly</span>
+                            </div>
+                            <div class="bg-purple-500/10 border border-purple-500/20 text-brandAccent text-xs font-medium px-2.5 py-1.5 rounded-md inline-block">
+                                Save 10% on annual billing cycles 
+                            </div>
+                            <ul class="space-y-3 text-sm text-zinc-300 font-light border-t border-zinc-800 pt-6">
+                                <li class="flex items-center gap-2">✔ Elevated Score Accuracy Limits </li>
+                                <li class="flex items-center gap-2">✔ Complete Market Pulse Tracking [cite: 4, 7]</li>
+                                <li class="flex items-center gap-2 text-zinc-600">❌ Elite Biometric & Native Features [cite: 9]</li>
+                            </ul>
+                        </div>
+                        <div class="mt-8">
+                            <a href="#auth-gateway" class="block w-full text-center bg-brandAccent hover:bg-purple-600 text-white text-sm font-medium py-3 rounded-md transition-all shadow-lg shadow-purple-500/20">Access Pro Tier</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-brandSurface border border-zinc-800 p-8 rounded-xl flex flex-col justify-between relative shadow-lg">
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-lg font-medium text-white">Elite Plan</h3>
+                                <p class="text-xs text-brandTextMuted mt-1">The complete data spectrum </p>
+                            </div>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-4xl font-bold text-white">500 TL</span>
+                                <span class="text-xs text-brandTextMuted">/ monthly</span>
+                            </div>
+                            <div class="bg-zinc-800 border border-zinc-700 text-zinc-300 text-xs font-medium px-2.5 py-1.5 rounded-md inline-block">
+                                Save 10% on annual billing cycles 
+                            </div>
+                            <ul class="space-y-3 text-sm text-zinc-300 font-light border-t border-zinc-800 pt-6">
+                                <li class="flex items-center gap-2">✔ Real-time Multi-Timeframe Synthesis </li>
+                                <li class="flex items-center gap-2">✔ Full Analytical Score Access (50-100) </li>
+                                <li class="flex items-center gap-2">✔ Native Biometric Hardware Enrolment [cite: 9]</li>
+                            </ul>
+                        </div>
+                        <div class="mt-8">
+                            <a href="#auth-gateway" class="block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-medium py-3 rounded-md transition-colors">Request Elite Access</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="md:col-span-7 order-1 md:order-2 space-y-5">
-                <div class="text-brandPurple text-3xl"><i class="fa-solid fa-chart-line"></i></div>
-                <h2 class="text-3xl font-black text-white">Live Crypto Market Overview</h2>
-                <p class="text-gray-400 text-base leading-relaxed">
-                    Track the global crypto markets in real-time. Monitor dominance, volume changes, and price actions across top-tier asset pairs with zero latency. Stay on top of volatility before it happens.
+        </section>
+
+        <section id="auth-gateway" class="py-24 bg-zinc-950 border-b border-zinc-900 text-center">
+            <div class="max-w-2xl mx-auto px-4 space-y-6">
+                <div class="w-16 h-16 mx-auto rounded-2xl border border-zinc-800 bg-brandBg flex items-center justify-center shadow-xl">
+                    <span class="text-xl font-bold tracking-tighter text-white">NT</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">Unified Registration System</h2>
+                <p class="text-sm text-brandTextMuted font-light max-w-md mx-auto">
+                    Account management is securely deployed directly on novirasoft.com. Accounts generated here synchronize instantly with your native terminal applications.
                 </p>
-                <div class="grid grid-cols-2 gap-4 pt-2">
-                    <div class="border-l-2 border-brandPurple pl-4"><h4 class="font-bold text-white text-sm">Real-Time Data</h4><p class="text-xs text-gray-400">Instant tracking of market shifts.</p></div>
-                    <div class="border-l-2 border-brandPurple pl-4"><h4 class="font-bold text-white text-sm">Clean Workspace</h4><p class="text-xs text-gray-400">No clutter, just essential data.</p></div>
+                <div class="pt-4">
+                    <span class="inline-flex items-center gap-1.5 text-xs font-medium text-brandAccent bg-purple-500/10 px-3 py-1.5 rounded-md border border-purple-500/20">
+                        Registration API Infrastructure Active & Encrypted
+                    </span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section id="signals" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-12 items-center">
-            <div class="md:col-span-7 space-y-5">
-                <div class="text-brandGreen text-3xl"><i class="fa-solid fa-bolt"></i></div>
-                <h2 class="text-3xl font-black text-white">Actionable Scalp & Swing Signals</h2>
-                <p class="text-gray-400 text-base leading-relaxed">
-                    No more second-guessing. Get crystal-clear entry levels, targets, and Z-Score volatility metrics directly on your dashboard. Designed to pinpoint high-probability Long and Short opportunities across multiple timeframes.
+    <footer id="legal-docs" class="bg-brandBg py-12 border-t border-zinc-900 text-xs text-brandTextMuted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-zinc-900 pb-8">
+                <div>
+                    <p class="font-semibold text-white text-sm">NOVIRA SOFT</p>
+                    <p class="mt-1 font-light">Developing secure quantitative and network solutions infrastructure.</p>
+                </div>
+                <div class="flex items-center gap-6 font-medium">
+                    <a href="/legal/privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="/legal/terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+            
+            <div class="space-y-4 font-light leading-relaxed text-justify text-zinc-500">
+                <p>
+                    <strong class="text-zinc-400 font-medium">REGULATORY AND OPERATIONAL RISK DISCLAIMER:</strong> Novira Trade is an automated data processing system that executes statistical evaluations based on predetermined technical indicators and mathematical logic[cite: 3]. NOVIRA SOFT does not function as an investment advisory service, licensed brokerage house, or formal financial institution. The intelligence, scores, analytics, and metrics generated by the software are for computational information and educational tracking paradigms only[cite: 9].
                 </p>
-                <div class="border-l-2 border-brandGreen pl-4"><h4 class="font-bold text-white text-sm">Z-Score Confirmation</h4><p class="text-xs text-gray-400">Mathematically backed algorithmic triggers.</p></div>
-            </div>
-            <div class="md:col-span-5 flex justify-center">
-                <div class="p-2 bg-gray-900 border-4 border-gray-800 rounded-[2.5rem] shadow-2xl max-w-[280px] glow-green">
-                    <img src="800ddfef-8533-46f5-94f4-6404b88f9ed6.png" alt="Signals Screen" class="rounded-[2.2rem]">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="analysis" class="bg-brandCard/30 border-y border-gray-800 py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-12 items-center">
-            <div class="md:col-span-5 order-2 md:order-1 flex justify-center">
-                <div class="p-2 bg-gray-900 border-4 border-gray-800 rounded-[2.5rem] shadow-2xl max-w-[280px] glow-effect">
-                    <img src="ce313e78-51bf-4228-be83-4c3c7b2ebd04.png" alt="AI Analysis Screen" class="rounded-[2.2rem]">
-                </div>
-            </div>
-            <div class="md:col-span-7 order-1 md:order-2 space-y-5">
-                <div class="text-brandPurple text-3xl"><i class="fa-solid fa-robot"></i></div>
-                <h2 class="text-3xl font-black text-white">AI-Powered Oscillator & Trend Analysis</h2>
-                <p class="text-gray-400 text-base leading-relaxed">
-                    Leverage integrated artificial intelligence to analyze complex oscillators simultaneously. Understand trend strength, overbought/oversold states, and macro conditions without staring at charts for hours.
+                <p>
+                    Financial transactions involve significant capital exposure and risk. Past structural data configurations do not provide absolute guarantees regarding subsequent performance horizons. Users acknowledge that execution of operations is performed at their sole discretion and liability. NOVIRA SOFT, its developers, associates, and corporate entities expressly disclaim legal or compensatory responsibility for loss of capital, resource drawdowns, or auxiliary operational errors resulting directly or indirectly from choices based on software metrics.
                 </p>
-                <div class="border-l-2 border-brandPurple pl-4"><h4 class="font-bold text-white text-sm">Automated Confluence</h4><p class="text-xs text-gray-400">AI correlates multiple indicators instantly.</p></div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 text-zinc-600 font-mono text-[10px]">
+                <p>© 2026 NOVIRA SOFT. All legal, engineering, and digital property rights reserved.</p>
+                <p>Security Audit Status: Cryptographically Hardened </p>
             </div>
         </div>
-    </section>
-
-    <section id="risk" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-12 items-center">
-            <div class="md:col-span-7 space-y-5">
-                <div class="text-brandRed text-3xl"><i class="fa-solid fa-shield-halved"></i></div>
-                <h2 class="text-3xl font-black text-white">Mathematical Risk Management</h2>
-                <p class="text-gray-400 text-base leading-relaxed">
-                    Sustaining capital is the first law of profitable trading. Monitor your precise Win Rates, Average Risk/Reward metrics, and calculate exact liquidation levels before execution. Remove human bias, rely strictly on logic.
-                </p>
-                <div class="border-l-2 border-brandRed pl-4"><h4 class="font-bold text-white text-sm">Capital Protection</h4><p class="text-xs text-gray-400">Deep mathematical positioning parameters.</p></div>
-            </div>
-            <div class="md:col-span-5 flex justify-center">
-                <div class="p-2 bg-gray-900 border-4 border-gray-800 rounded-[2.5rem] shadow-2xl max-w-[280px]">
-                    <img src="f148fc08-1076-4aa9-9871-686eaca0aa9c.png" alt="Risk Screen" class="rounded-[2.2rem]">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="download" class="max-w-5xl mx-auto px-4 py-16 text-center space-y-6 border-t border-gray-900">
-        <h2 class="text-3xl sm:text-4xl font-black text-white">COMING SOON TO STORES</h2>
-        <p class="text-gray-400 max-w-md mx-auto text-sm">Novira Trade is currently in private beta testing and preparing for public release. Send us a direct message on Instagram to request early access or get notified immediately upon launch!</p>
-        
-        <div class="pt-4 flex flex-col items-center space-y-6">
-            <a href="https://www.instagram.com/_fatihdurmz?igsh=azZ2YWxlNDN4NG5n" target="_blank" class="inline-flex items-center space-x-3 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 hover:scale-105 transition text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-pink-500/10">
-                <i class="fa-brands fa-instagram text-2xl"></i>
-                <span>Connect via Instagram DM</span>
-            </a>
-
-            <div class="flex flex-wrap justify-center gap-4 opacity-40">
-                <div class="bg-black border border-gray-800 text-white px-6 py-3 rounded-xl flex items-center space-x-3">
-                    <i class="fa-brands fa-apple text-2xl"></i>
-                    <div class="text-left"><p class="text-[10px] text-gray-400 uppercase">App Store</p><p class="text-sm font-semibold -mt-1">Coming Soon</p></div>
-                </div>
-                <div class="bg-black border border-gray-800 text-white px-6 py-3 rounded-xl flex items-center space-x-3">
-                    <i class="fa-brands fa-google-play text-2xl"></i>
-                    <div class="text-left"><p class="text-[10px] text-gray-400 uppercase">Google Play</p><p class="text-sm font-semibold -mt-1">Coming Soon</p></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="border-t border-gray-900 bg-brandDark py-6 text-center text-xs text-gray-600">
-        <p>&copy; 2026 Novira Trade. All rights reserved. Trade Smarter. Trade Better.</p>
     </footer>
 
 </body>
