@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOVIRA SOFT | Next-Gen Financial & Software Ecosystem</title>
+    <title>NOVIRA SOFT | Next-Gen Financial Ecosystem</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -11,7 +11,7 @@
                 extend: {
                     colors: {
                         brandBg: '#09090b',
-                        brandSurface: '#18181b',
+                        brandSurface: '#141417',
                         brandAccent: '#a855f7',
                         brandTextMuted: '#a1a1aa'
                     }
@@ -29,7 +29,7 @@
 </head>
 <body class="antialiased selection:bg-purple-500 selection:text-white">
 
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-brandBg/80 border-b border-zinc-800/80">
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-brandBg/80 border-b border-zinc-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3 group">
                 <img src="logo.png" alt="NT" class="w-8 h-8 object-contain rounded-lg border border-zinc-800 shadow-md">
@@ -42,31 +42,24 @@
                         Products
                         <svg class="w-4 h-4 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="absolute left-0 top-full w-64 bg-brandSurface border border-zinc-800 rounded-lg shadow-2xl p-2 hidden">
+                    <div class="absolute left-0 top-full w-64 bg-brandSurface border border-zinc-800 rounded-lg shadow-2xl p-2 hidden dropdown-menu">
                         <a href="#novira-trade" class="flex items-start gap-3 p-3 rounded-md hover:bg-zinc-800/50 transition-colors">
-                            <div class="w-2 h-2 rounded-full bg-emerald-500 mt-1.5 shrink-0"></div>
+                            <div class="w-2 h-2 rounded-full bg-purple-500 mt-1.5 shrink-0"></div>
                             <div>
                                 <p class="text-sm font-medium text-white">Novira Trade</p>
-                                <p class="text-xs text-brandTextMuted mt-0.5">Quantitative Analysis & AI Engine</p>
+                                <p class="text-xs text-brandTextMuted mt-0.5">Quantitative Analysis Engine</p>
                             </div>
                         </a>
-                        <div class="flex items-start gap-3 p-3 rounded-md opacity-30 cursor-not-allowed">
-                            <div class="w-2 h-2 rounded-full bg-zinc-600 mt-1.5 shrink-0"></div>
-                            <div>
-                                <p class="text-sm font-medium text-zinc-400">Novira VPN</p>
-                                <p class="text-xs text-zinc-500 mt-0.5">In Development Infrastructure</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <a href="#technology" class="text-sm font-medium text-brandTextMuted hover:text-white transition-colors">Core Technology</a>
-                <a href="#pricing" class="text-sm font-medium text-brandTextMuted hover:text-white transition-colors">Tiers & Licensing</a>
-                <a href="#legal-docs" class="text-sm font-medium text-brandTextMuted hover:text-white transition-colors">Compliance</a>
+                <a href="#pricing" class="text-sm font-medium text-brandTextMuted hover:text-white transition-colors">Pricing Tiers</a>
+                <button onclick="openLegalModal('terms')" class="text-sm font-medium text-brandTextMuted hover:text-white transition-colors">Terms of Service</button>
             </nav>
 
             <div class="flex items-center gap-4">
                 <button onclick="toggleAuthModal('signin')" class="text-sm font-medium text-brandTextMuted hover:text-white transition-colors hidden sm:block">Sign In</button>
-                <button onclick="toggleAuthModal('signup')" class="bg-white text-black text-sm font-medium px-5 py-2.5 rounded-md hover:bg-zinc-200 transition-all shadow-lg">
+                <button onclick="toggleAuthModal('signup')" class="bg-white text-black text-sm font-medium px-5 py-2.5 rounded-xl hover:bg-zinc-200 transition-all shadow-lg">
                     Create Account
                 </button>
             </div>
@@ -97,25 +90,16 @@
                                 <i class="fa-solid fa-user-plus text-lg"></i>
                                 <span>Register to Download APK</span>
                             </button>
-                            <div class="w-full sm:w-auto bg-zinc-900/50 border border-zinc-800 px-5 py-3.5 rounded-xl flex items-center gap-3 justify-center">
-                                <i class="fa-solid fa-shield-halved text-emerald-500 text-lg"></i>
-                                <div class="text-left font-mono text-xs">
-                                    <p class="text-white font-medium">Secured by Novira Auth</p>
-                                    <p class="text-brandTextMuted">Mail Verification Required</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
                     <div class="lg:col-span-5 relative flex justify-center">
                         <div class="absolute inset-0 bg-gradient-to-b from-purple-500/10 to-transparent blur-3xl rounded-full max-w-lg mx-auto"></div>
-                        
                         <div class="relative w-72 sm:w-80 bg-zinc-950 border-4 border-zinc-800 rounded-[2.5rem] p-3 shadow-2xl shadow-black group">
                             <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-4 bg-zinc-800 rounded-b-xl z-20"></div>
-                            
                             <div class="relative rounded-[2rem] overflow-hidden aspect-[9/19.5] bg-zinc-900 border border-zinc-800 flex items-center justify-center">
-                                <img src="09ec3ada-f4d8-4af1-9cf8-f490ce389937.png" alt="Novira Trade Terminal Interface" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 opacity-100 group-hover:opacity-0">
-                                <img src="800ddfef-8533-46f5-94f4-6404b88f9ed6.png" alt="Novira Trade Quantitative Chart Engine" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 opacity-0 group-hover:opacity-100">
+                                <img src="09ec3ada-f4d8-4af1-9cf8-f490ce389937.png" alt="Interface 1" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 opacity-100 group-hover:opacity-0">
+                                <img src="800ddfef-8533-46f5-94f4-6404b88f9ed6.png" alt="Interface 2" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 opacity-0 group-hover:opacity-100">
                             </div>
                         </div>
                     </div>
@@ -132,28 +116,20 @@
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8 mt-16">
-                    <div class="bg-brandSurface border border-zinc-800/60 p-8 rounded-xl space-y-4">
+                    <div class="bg-brandSurface border border-zinc-800/60 p-8 rounded-2xl space-y-4">
                         <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-brandAccent font-bold">01</div>
-                        <h3 class="text-lg font-semibold text-white tracking-tight">Tamper-Detection Infrastructure</h3>
-                        <p class="text-sm text-brandTextMuted leading-relaxed font-light">
-                            Secured via advanced cryptographic validation architectures. Dynamic integrity screening monitors execution layers, instantly shielding user telemetry while identifying and restricting unauthorized reverse engineering behaviors.
-                        </p>
+                        <h3 class="text-lg font-semibold text-white">Tamper-Detection Algos</h3>
+                        <p class="text-sm text-brandTextMuted font-light leading-relaxed">Secured via advanced cryptographic validation architectures. Dynamic integrity screening monitors execution layers, instantly shielding user telemetry.</p>
                     </div>
-
-                    <div class="bg-brandSurface border border-zinc-800/60 p-8 rounded-xl space-y-4">
+                    <div class="bg-brandSurface border border-zinc-800/60 p-8 rounded-2xl space-y-4">
                         <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-brandAccent font-bold">02</div>
-                        <h3 class="text-lg font-semibold text-white tracking-tight">Confluence Scoring Matrix</h3>
-                        <p class="text-sm text-brandTextMuted leading-relaxed font-light">
-                            Novira Trade utilizes an algorithmic scoring framework that cross-examines 20+ specialized technical indicators simultaneously. Synthesizing temporal shifts across multiple timeframes, it evaluates confluence targets with institutional accuracy.
-                        </p>
+                        <h3 class="text-lg font-semibold text-white">Confluence Scoring Matrix</h3>
+                        <p class="text-sm text-brandTextMuted font-light leading-relaxed">Novira Trade utilizes an algorithmic scoring framework that cross-examines 20+ specialized technical indicators simultaneously across timelines.</p>
                     </div>
-
-                    <div class="bg-brandSurface border border-zinc-800/60 p-8 rounded-xl space-y-4">
+                    <div class="bg-brandSurface border border-zinc-800/60 p-8 rounded-2xl space-y-4">
                         <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-brandAccent font-bold">03</div>
-                        <h3 class="text-lg font-semibold text-white tracking-tight">Mathematical Account Protection</h3>
-                        <p class="text-sm text-brandTextMuted leading-relaxed font-light">
-                            Built explicitly to stabilize portfolio health. The automated mathematical risk engine outputs clear Take-Profit and hard Stop-Loss criteria based on asset volatility indices, allowing execution entirely devoid of psychological turbulence.
-                        </p>
+                        <h3 class="text-lg font-semibold text-white">Mathematical Account Protection</h3>
+                        <p class="text-sm text-brandTextMuted font-light leading-relaxed">Built explicitly to stabilize portfolio health. The automated mathematical risk engine outputs clear Take-Profit and hard Stop-Loss criteria.</p>
                     </div>
                 </div>
             </div>
@@ -162,32 +138,32 @@
         <section id="pricing" class="py-24 border-b border-zinc-900">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto space-y-4">
-                    <h2 class="text-xs uppercase font-semibold tracking-widest text-brandAccent">Licensing Layers</h2>
+                    <h2 class="text-xs uppercase font-semibold tracking-widest text-brandAccent font-mono">Licensing Layers</h2>
                     <p class="text-3xl sm:text-4xl font-bold tracking-tight text-white">Select Your Operational Tier</p>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-8 mt-16 max-w-5xl mx-auto items-stretch">
-                    <div class="bg-brandSurface border border-zinc-800 p-8 rounded-xl flex flex-col justify-between relative shadow-lg">
+                <div class="grid md:grid-cols-3 gap-8 mt-16 max-w-5xl mx-auto items-stretch font-sans">
+                    <div class="bg-brandSurface border border-zinc-800 p-8 rounded-2xl flex flex-col justify-between shadow-lg">
                         <div class="space-y-6">
                             <div>
                                 <h3 class="text-lg font-medium text-white">Free Plan</h3>
                                 <p class="text-xs text-brandTextMuted mt-1">Basic exploratory tier</p>
                             </div>
                             <div class="flex items-baseline gap-1">
-                                <span class="text-4xl font-bold text-white">0 TL</span>
+                                <span class="text-4xl font-bold text-white">$0</span>
                                 <span class="text-xs text-brandTextMuted">/ monthly</span>
                             </div>
                             <ul class="space-y-3 text-sm text-zinc-300 font-light border-t border-zinc-800 pt-6">
-                                <li class="flex items-center gap-2">✔ Core Confluence Indicator Scores</li>
-                                <li class="flex items-center gap-2">✔ Standard Calculation Weights</li>
+                                <li>✔ Core Confluence Indicator Scores</li>
+                                <li>✔ Standard Calculation Weights</li>
                             </ul>
                         </div>
                         <div class="mt-8">
-                            <button onclick="toggleAuthModal('signup')" class="block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-medium py-3 rounded-md transition-colors">Create Free Account</button>
+                            <button onclick="toggleAuthModal('signup')" class="block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-medium py-3 rounded-xl transition-colors">Create Free Account</button>
                         </div>
                     </div>
 
-                    <div class="bg-brandSurface border-2 border-brandAccent p-8 rounded-xl flex flex-col justify-between relative shadow-2xl">
+                    <div class="bg-brandSurface border-2 border-brandAccent p-8 rounded-2xl flex flex-col justify-between relative shadow-2xl">
                         <div class="absolute -top-3 right-4 bg-brandAccent text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">Popular</div>
                         <div class="space-y-6">
                             <div>
@@ -195,31 +171,28 @@
                                 <p class="text-xs text-brandTextMuted mt-1">Extended parameters & deep analysis</p>
                             </div>
                             <div class="flex items-baseline gap-1">
-                                <span class="text-4xl font-bold text-white">250 TL</span>
+                                <span class="text-4xl font-bold text-white">$9.99</span>
                                 <span class="text-xs text-brandTextMuted">/ monthly</span>
-                            </div>
-                            <div class="bg-purple-500/10 border border-purple-500/20 text-brandAccent text-xs font-medium px-2.5 py-1.5 rounded-md inline-block">
-                                Save 10% on annual billing cycles
                             </div>
                         </div>
                         <div class="mt-8">
-                            <button onclick="toggleAuthModal('signup')" class="block w-full text-center bg-brandAccent hover:bg-purple-600 text-white text-sm font-medium py-3 rounded-md transition-all shadow-lg shadow-purple-500/20">Access Pro Tier</button>
+                            <button onclick="openPaymentModal('Pro Plan', '9.99')" class="block w-full text-center bg-brandAccent hover:bg-purple-600 text-white text-sm font-medium py-3 rounded-xl transition-all shadow-lg shadow-purple-500/20">Access Pro Tier</button>
                         </div>
                     </div>
 
-                    <div class="bg-brandSurface border border-zinc-800 p-8 rounded-xl flex flex-col justify-between relative shadow-lg">
+                    <div class="bg-brandSurface border border-zinc-800 p-8 rounded-2xl flex flex-col justify-between shadow-lg">
                         <div class="space-y-6">
                             <div>
                                 <h3 class="text-lg font-medium text-white">Elite Plan</h3>
                                 <p class="text-xs text-brandTextMuted mt-1">The complete data spectrum</p>
                             </div>
                             <div class="flex items-baseline gap-1">
-                                <span class="text-4xl font-bold text-white">500 TL</span>
+                                <span class="text-4xl font-bold text-white">$14.99</span>
                                 <span class="text-xs text-brandTextMuted">/ monthly</span>
                             </div>
                         </div>
                         <div class="mt-8">
-                            <button onclick="toggleAuthModal('signup')" class="block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-medium py-3 rounded-md transition-colors">Request Elite Access</button>
+                            <button onclick="openPaymentModal('Elite Plan', '14.99')" class="block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-medium py-3 rounded-xl transition-colors">Request Elite Access</button>
                         </div>
                     </div>
                 </div>
@@ -228,51 +201,90 @@
     </main>
 
     <div id="authModal" class="fixed inset-0 z-50 invisible flex items-center justify-center p-4 transition-all duration-300">
-        <div onclick="toggleAuthModal()" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-        
-        <div class="bg-brandSurface border border-zinc-800 w-full max-w-md rounded-2xl p-8 relative z-10 shadow-2xl animate-fade-in text-center space-y-6">
-            <div class="w-12 h-12 mx-auto rounded-xl border border-zinc-800 bg-brandBg flex items-center justify-center">
-                <img src="logo.png" alt="NT" class="w-6 h-6 object-contain">
-            </div>
-            
+        <div onclick="toggleAuthModal()" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+        <div class="bg-brandSurface border border-zinc-800 w-full max-w-md rounded-2xl p-8 relative z-10 shadow-2xl text-center space-y-6">
+            <div class="w-12 h-12 mx-auto rounded-xl border border-zinc-800 bg-brandBg flex items-center justify-center"><img src="logo.png" alt="NT" class="w-6 h-6 object-contain"></div>
             <div>
-                <h3 id="modalTitle" class="text-xl font-bold tracking-tight text-white">Create Your Corporate Account</h3>
+                <h3 id="modalTitle" class="text-xl font-bold text-white">Create Your Corporate Account</h3>
                 <p id="modalDesc" class="text-xs text-brandTextMuted mt-1">Your credentials allow direct access across the Novira database node.</p>
             </div>
-
             <form id="corporateAuthForm" method="POST" action="api/auth/gateway.php" class="space-y-4 text-left">
                 <input type="hidden" id="authMode" name="mode" value="signup">
-                
                 <div>
                     <label class="block text-xs font-medium text-zinc-400 uppercase tracking-wider mb-1.5">Email Address</label>
-                    <input type="email" required name="email" placeholder="name@company.com" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brandAccent transition-colors">
+                    <input type="email" required name="email" placeholder="name@company.com" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brandAccent">
                 </div>
-
                 <div>
                     <label class="block text-xs font-medium text-zinc-400 uppercase tracking-wider mb-1.5">Secure Password</label>
-                    <input type="password" required name="password" placeholder="••••••••" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brandAccent transition-colors">
+                    <input type="password" required name="password" placeholder="••••••••" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brandAccent">
                 </div>
-
                 <div id="termsCheckbox" class="flex items-start gap-2.5 pt-1">
                     <input type="checkbox" required id="agreeTerms" class="mt-0.5 rounded accent-brandAccent">
                     <label for="agreeTerms" class="text-xs text-brandTextMuted leading-tight font-light">
-                        I verify authentication parameters and agree to the <a href="/legal/terms.html" class="text-brandAccent hover:underline">Terms of Service</a> and <a href="/legal/privacy-policy.html" class="text-brandAccent hover:underline">Privacy Policy</a>.
+                        I agree to the <button type="button" onclick="openLegalModal('privacy')" class="text-brandAccent hover:underline">Privacy Policy</button> and <button type="button" onclick="openLegalModal('terms')" class="text-brandAccent hover:underline">Terms of Service</button>.
                     </label>
                 </div>
-
-                <button type="submit" class="w-full bg-white hover:bg-zinc-200 text-black font-medium text-sm py-3.5 rounded-lg transition-colors mt-2 shadow-lg shadow-white/5">
-                    Execute Verification Sequence
-                </button>
+                <button type="submit" class="w-full bg-white hover:bg-zinc-200 text-black font-medium text-sm py-3.5 rounded-xl transition-colors mt-2 shadow-lg">Execute Sequence</button>
             </form>
-
             <div class="text-xs text-zinc-500 border-t border-zinc-800/80 pt-4 font-light">
-                <span id="switchText">Already registered within the software node?</span>
+                <span id="switchText">Already registered?</span>
                 <button onclick="switchAuthMode()" id="switchBtn" class="text-brandAccent font-medium hover:underline ml-1">Sign In Here</button>
             </div>
         </div>
     </div>
 
-    <footer id="legal-docs" class="bg-brandBg py-12 border-t border-zinc-900 text-xs text-brandTextMuted">
+    <div id="paymentModal" class="fixed inset-0 z-50 invisible flex items-center justify-center p-4 transition-all duration-300">
+        <div onclick="closePaymentModal()" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+        <div class="bg-zinc-950 border border-zinc-800 w-full max-w-md rounded-2xl p-6 relative z-10 shadow-2xl text-center space-y-6">
+            <div class="flex items-center justify-between border-b border-zinc-900 pb-3">
+                <div class="text-left">
+                    <h3 class="text-lg font-bold text-white">Binance Pay Gateway</h3>
+                    <p id="selectedPlanLabel" class="text-xs text-brandAccent">Pro Plan Tier Activation</p>
+                </div>
+                <button onclick="closePaymentModal()" class="text-zinc-500 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="bg-[#1e2026] border border-zinc-800 rounded-2xl p-5 space-y-4">
+                <p class="text-xs text-zinc-400 font-medium">Scan with Binance App</p>
+                <div class="w-48 h-48 mx-auto bg-white p-2 rounded-xl border border-zinc-700 shadow-xl flex items-center justify-center">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://me-qr.com/id/180650267" alt="Binance Pay QR" class="w-full h-full object-contain">
+                </div>
+                <div class="text-center font-mono text-xs text-zinc-300">
+                    <p class="font-bold text-[#f3ba2f]">Merchant: No-NickTR</p>
+                    <p class="text-zinc-500 mt-0.5">ID: 180650267</p>
+                </div>
+            </div>
+
+            <form action="api/auth/payment_notification.php" method="POST" class="space-y-3 text-left">
+                <div>
+                    <label class="block text-[11px] font-medium text-zinc-400 uppercase tracking-wider mb-1">Your Registered Email</label>
+                    <input type="email" required name="user_email" placeholder="name@company.com" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2.5 text-xs text-white focus:outline-none focus:border-brandAccent">
+                </div>
+                <div>
+                    <label class="block text-[11px] font-medium text-zinc-400 uppercase tracking-wider mb-1">Binance Pay TxID / ID</label>
+                    <input type="text" required name="txid" placeholder="Enter Transaction number or your Pay ID" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2.5 text-xs text-white focus:outline-none focus:border-brandAccent">
+                </div>
+                <button type="submit" class="w-full bg-[#f3ba2f] hover:bg-[#dfa92b] text-black font-semibold text-xs py-3 rounded-xl transition-colors shadow-lg">Confirm Payment Notification</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="legalModal" class="fixed inset-0 z-50 invisible flex items-center justify-center p-4 transition-all duration-300">
+        <div onclick="closeLegalModal()" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+        <div class="bg-brandSurface border border-zinc-800 w-full max-w-2xl h-[500px] rounded-2xl p-8 relative z-10 shadow-2xl flex flex-col justify-between">
+            <div class="flex items-center justify-between border-b border-zinc-800 pb-4">
+                <h3 id="legalModalTitle" class="text-xl font-bold text-white">Legal Documentation</h3>
+                <button onclick="closeLegalModal()" class="text-zinc-500 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <div id="legalModalContent" class="overflow-y-auto my-6 text-sm font-light text-zinc-400 space-y-4 pr-2 leading-relaxed">
+                </div>
+            <div class="text-right pt-2 border-t border-zinc-800">
+                <button onclick="closeLegalModal()" class="bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-medium px-5 py-2.5 rounded-lg transition-colors">Acknowledge</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-brandBg py-12 border-t border-zinc-900 text-xs text-brandTextMuted">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-zinc-900 pb-8">
                 <div>
@@ -280,69 +292,91 @@
                     <p class="mt-1 font-light">Developing secure quantitative and network solutions infrastructure.</p>
                 </div>
                 <div class="flex items-center gap-6 font-medium">
-                    <a href="/legal/privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="/legal/terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+                    <button onclick="openLegalModal('privacy')" class="hover:text-white transition-colors">Privacy Policy</button>
+                    <button onclick="openLegalModal('terms')" class="hover:text-white transition-colors">Terms of Service</button>
                 </div>
             </div>
-            
-            <div class="space-y-4 font-light leading-relaxed text-justify text-zinc-500">
-                <p>
-                    <strong class="text-zinc-400 font-medium">REGULATORY AND OPERATIONAL RISK DISCLAIMER:</strong> Novira Trade is an automated data processing system that executes statistical evaluations based on predetermined technical indicators and mathematical logic. NOVIRA SOFT does not function as an investment advisory service, licensed brokerage house, or formal financial institution.
-                </p>
-                <p>
-                    Financial transactions involve significant capital exposure and risk. Past structural data configurations do not provide guarantee regarding performance horizons. Users acknowledge execution of operations is performed at their sole discretion. NOVIRA SOFT disclaims legal responsibility for loss of capital resulting directly or indirectly from choices based on software metrics.
-                </p>
-            </div>
-
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 text-zinc-600 font-mono text-[10px]">
-                <p>© 2026 NOVIRA SOFT. All legal, engineering, and digital property rights reserved.</p>
-                <p>Security Audit Status: Cryptographically Hardened</p>
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-zinc-600 font-mono text-[10px]">
+                <p>© 2026 NOVIRA SOFT. All engineering and property rights reserved.</p>
+                <p>Security Audit: Cryptographically Hardened</p>
             </div>
         </div>
     </footer>
 
     <script>
-        const modal = document.getElementById('authModal');
-        const modeInput = document.getElementById('authMode');
-        const title = document.getElementById('modalTitle');
-        const desc = document.getElementById('modalDesc');
-        const terms = document.getElementById('termsCheckbox');
-        const switchText = document.getElementById('switchText');
-        const switchBtn = document.getElementById('switchBtn');
+        // Modal State Controls
+        const authModal = document.getElementById('authModal');
+        const paymentModal = document.getElementById('paymentModal');
+        const legalModal = document.getElementById('legalModal');
 
         function toggleAuthModal(mode = 'signup') {
-            if (modal.classList.contains('invisible')) {
+            if (authModal.classList.contains('invisible')) {
                 setAuthMode(mode);
-                modal.classList.remove('invisible');
+                authModal.classList.remove('invisible');
                 document.body.classList.add('modal-active');
             } else {
-                modal.classList.add('invisible');
+                authModal.classList.add('invisible');
                 document.body.classList.remove('modal-active');
             }
         }
 
         function setAuthMode(mode) {
-            modeInput.value = mode;
+            document.getElementById('authMode').value = mode;
             if (mode === 'signup') {
-                title.innerText = 'Create Your Corporate Account';
-                desc.innerText = 'Your credentials allow direct access across the Novira database node.';
-                terms.style.display = 'flex';
-                document.getElementById('agreeTerms').required = true;
-                switchText.innerText = 'Already registered within the software node?';
-                switchBtn.innerText = 'Sign In Here';
+                document.getElementById('modalTitle').innerText = 'Create Your Corporate Account';
+                document.getElementById('termsCheckbox').style.display = 'flex';
+                document.getElementById('switchText').innerText = 'Already registered?';
+                document.getElementById('switchBtn').innerText = 'Sign In Here';
             } else {
-                title.innerText = 'Access Software Terminal Node';
-                desc.innerText = 'Enter your encrypted credentials to authorize session parameters.';
-                terms.style.display = 'none';
-                document.getElementById('agreeTerms').required = false;
-                switchText.innerText = 'New profile activation required?';
-                switchBtn.innerText = 'Create Profile';
+                document.getElementById('modalTitle').innerText = 'Access Software Terminal Node';
+                document.getElementById('termsCheckbox').style.display = 'none';
+                document.getElementById('switchText').innerText = 'New profile activation required?';
+                document.getElementById('switchBtn').innerText = 'Create Profile';
             }
         }
 
         function switchAuthMode() {
-            const currentMode = modeInput.value;
-            setAuthMode(currentMode === 'signup' ? 'signin' : 'signup');
+            setAuthMode(document.getElementById('authMode').value === 'signup' ? 'signin' : 'signup');
+        }
+
+        function openPaymentModal(planName, price) {
+            document.getElementById('selectedPlanLabel').innerText = `${planName} Activation — Total: $${price}`;
+            paymentModal.classList.remove('invisible');
+            document.body.classList.add('modal-active');
+        }
+
+        function closePaymentModal() {
+            paymentModal.classList.add('invisible');
+            document.body.classList.remove('modal-active');
+        }
+
+        // Inline Legal System Data
+        const legalData = {
+            privacy: {
+                title: "Privacy Policy (KVKK / GDPR Compliance)",
+                body: `<p><strong>1. Data Collection Parameters:</strong> NOVIRA SOFT only processes minimal telemetry required to authenticate active operational terminal sessions. This includes your explicit email address and encrypted device identifier (Hardware ID) algorithms.</p>
+                       <p><strong>2. Cryptographic Storage & Security:</strong> All authentication matrices are processed utilizing isolated server environments. Passwords undergo irreversible structural hashing via Bcrypt prior to database storage.</p>
+                       <p><strong>3. Third-Party Restrictions:</strong> Your institutional access parameters and verified telemetry are never routed, commercialized, or made transparent to external actors or marketing providers.</p>`
+            },
+            terms: {
+                title: "Terms of Service & Risk Sourcing Framework",
+                body: `<p><strong>1. Intellectual Property & Reverse Engineering:</strong> All quantitative logic models, UI interface schemas, and structural binary assemblies under the Novira Trade banner remain proprietary architectural creations of NOVIRA SOFT. Any attempts at memory dumping, decompilation, or reverse engineering will trigger proactive node-level de-authorization sequences.</p>
+                       <p><strong>2. Risk Mitigation & Advisory Disclaimer:</strong> Novira Trade delivers advanced numerical calculations, analytical scores, and multi-timeframe indicator matrices for exploratory support. It does not provide certified financial advice or capital deployment instructions. The operational choices and capital exposure risks belong solely to the active user node.</p>`
+            }
+        };
+
+        function openLegalModal(type) {
+            document.getElementById('legalModalTitle').innerText = legalData[type].title;
+            document.getElementById('legalModalContent').innerHTML = legalData[type].body;
+            legalModal.classList.remove('invisible');
+            document.body.classList.add('modal-active');
+        }
+
+        function closeLegalModal() {
+            legalModal.classList.add('invisible');
+            if (authModal.classList.contains('invisible') && paymentModal.classList.contains('invisible')) {
+                document.body.classList.remove('modal-active');
+            }
         }
     </script>
 </body>
