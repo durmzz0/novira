@@ -553,6 +553,40 @@
         </div>
     </div>
 
+        <section id="feedback" class="section">
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-label mono">User Feedback</h2>
+                    <p class="section-title">Help Us Improve the Platform</p>
+                </div>
+                <div class="feedback-wrap">
+                    <div id="feedbackAuth" class="feedback-auth hidden">
+                        <p>You must be signed in to submit feedback.</p>
+                    </div>
+                    <form id="feedbackForm" class="feedback-form hidden">
+                        <div class="feedback-field">
+                            <label>Category</label>
+                            <select id="feedbackCategory">
+                                <option value="bug">Bug Report</option>
+                                <option value="feature">Feature Request</option>
+                                <option value="ui">Interface Improvement</option>
+                                <option value="performance">Performance Issue</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="feedback-field">
+                            <label>Your Feedback</label>
+                            <textarea id="feedbackText" rows="5" placeholder="Describe your suggestion or issue in detail..."></textarea>
+                        </div>
+                        <div class="feedback-actions">
+                            <button type="submit" id="feedbackSubmitBtn" class="btn btn-accent-sm">Submit Feedback</button>
+                        </div>
+                        <p id="feedbackSuccess" class="feedback-success hidden">✔ Your feedback has been submitted. Thank you.</p>
+                        <p id="feedbackError" class="feedback-error hidden">✘ Submission failed. Please try again.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
     <footer class="site-footer">
         <div class="container">
             <div class="footer-top">
@@ -574,5 +608,6 @@
 
     <script src="assets/js/modal-ui.js"></script>
     <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/feedback.js"></script>
 </body>
 </html>

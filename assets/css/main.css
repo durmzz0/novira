@@ -1331,3 +1331,135 @@ button[disabled] {
     opacity: 0.4;
     cursor: not-allowed;
 }
+
+/* Feedback Section */
+.feedback-wrap {
+    max-width: 640px;
+    margin: 2rem auto 0;
+}
+
+.feedback-auth {
+    text-align: center;
+    opacity: 0.7;
+    padding: 2rem;
+    border: 1px solid var(--border, rgba(255,255,255,0.1));
+    border-radius: 12px;
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.feedback-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.feedback-field label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.feedback-field select,
+.feedback-field textarea {
+    background: var(--card-bg, rgba(255,255,255,0.05));
+    border: 1px solid var(--border, rgba(255,255,255,0.15));
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: inherit;
+    font-size: 0.9rem;
+    resize: vertical;
+    outline: none;
+}
+
+.feedback-field select:focus,
+.feedback-field textarea:focus {
+    border-color: var(--accent, #7c3aed);
+}
+
+.feedback-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.feedback-success {
+    color: #22c55e;
+    font-size: 0.875rem;
+}
+
+.feedback-error {
+    color: #ef4444;
+    font-size: 0.875rem;
+}
+
+/* Feedback Section */
+.feedback-wrap {
+    max-width: 640px;
+    margin: 2rem auto 0;
+}
+
+.feedback-auth {
+    text-align: center;
+    opacity: 0.7;
+    padding: 2rem;
+    border: 1px solid var(--border, rgba(255,255,255,0.1));
+    border-radius: 12px;
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.feedback-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.feedback-field label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.feedback-field select,
+.feedback-field textarea {
+    background: var(--card-bg, rgba(255,255,255,0.05));
+    border: 1px solid var(--border, rgba(255,255,255,0.15));
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: inherit;
+    font-size: 0.9rem;
+    resize: vertical;
+    outline: none;
+}
+
+.feedback-field select:focus,
+.feedback-field textarea:focus {
+    border-color: var(--accent, #7c3aed);
+}
+
+.feedback-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.feedback-success {
+    color: #22c55e;
+    font-size: 0.875rem;
+}
+
+.feedback-error {
+    color: #ef4444;
+    font-size: 0.875rem;
+}
