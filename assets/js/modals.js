@@ -188,6 +188,8 @@ export function openSignupTermsModal(onAccept) {
   document.getElementById("signupTermsTitle").innerText = legalData.terms.title;
   document.getElementById("signupTermsContent").innerHTML = legalData.terms.body;
 
+  signupTermsModal.classList.remove("hidden");
+
   const acceptBtn = document.getElementById("signupTermsAccept");
   const checkTerms = document.getElementById("checkTerms");
   const checkPrivacy = document.getElementById("checkPrivacy");
@@ -209,8 +211,6 @@ export function openSignupTermsModal(onAccept) {
   checkTerms?.addEventListener("change", updateAcceptBtn);
   checkPrivacy?.addEventListener("change", updateAcceptBtn);
   checkRisk?.addEventListener("change", updateAcceptBtn);
-
-  signupTermsModal.classList.remove("hidden");
   document.body.classList.add("modal-active");
 }
 
