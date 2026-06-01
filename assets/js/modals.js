@@ -187,6 +187,29 @@ export function openSignupTermsModal(onAccept) {
   signupTermsAcceptCallback = onAccept;
   document.getElementById("signupTermsTitle").innerText = legalData.terms.title;
   document.getElementById("signupTermsContent").innerHTML = legalData.terms.body;
+
+  const acceptBtn = document.getElementById("signupTermsAccept");
+  const checkTerms = document.getElementById("checkTerms");
+  const checkPrivacy = document.getElementById("checkPrivacy");
+  const checkRisk = document.getElementById("checkRisk");
+
+  if (checkTerms) checkTerms.checked = false;
+  if (checkPrivacy) checkPrivacy.checked = false;
+  if (checkRisk) checkRisk.checked = false;
+  if (acceptBtn) acceptBtn.setAttribute("disabled", "true");
+
+  function updateAcceptBtn() {
+    if (checkTerms?.checked && checkPrivacy?.checked && checkRisk?.checked) {
+      acceptBtn?.removeAttribute("disabled");
+    } else {
+      acceptBtn?.setAttribute("disabled", "true");
+    }
+  }
+
+  checkTerms?.addEventListener("change", updateAcceptBtn);
+  checkPrivacy?.addEventListener("change", updateAcceptBtn);
+  checkRisk?.addEventListener("change", updateAcceptBtn);
+
   signupTermsModal.classList.remove("hidden");
   document.body.classList.add("modal-active");
 }
