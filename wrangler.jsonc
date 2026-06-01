@@ -1,0 +1,18 @@
+{
+  "name": "novira",
+  "compatibility_date": "2026-06-01",
+  "assets": {
+    "directory": ".",
+    "exclude": [
+      "node_modules/**",
+      ".wrangler/**",
+      "*.log",
+      "package.json",
+      "package-lock.json",
+      "bun.lockb",
+      "wrangler.jsonc",
+      "scripts/**",
+      "*.apk"
+    ]
+  }
+}
