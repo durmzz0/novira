@@ -1,4 +1,6 @@
 import { initAuth } from "./auth.js";
+import { db } from "./firebase.js";
+import { getCountFromServer, collection } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 import {
   closeAuthModal,
   closeLegalModal,
