@@ -1257,3 +1257,44 @@ button, input { font: inherit; }
     opacity: 0.85;
     line-height: 1.5;
 }
+
+/* Screenshots Section */
+.screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.screenshot-card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border, rgba(255,255,255,0.1));
+    background: var(--card-bg, rgba(255,255,255,0.05));
+    transition: transform 0.2s;
+}
+
+.screenshot-card:hover {
+    transform: translateY(-4px);
+}
+
+.screenshot-card img {
+    width: 100%;
+    display: block;
+}
+
+.screenshot-info {
+    padding: 1rem;
+}
+
+.screenshot-info h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+.screenshot-info p {
+    font-size: 0.8rem;
+    opacity: 0.75;
+    line-height: 1.5;
+}
