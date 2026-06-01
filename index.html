@@ -484,12 +484,23 @@
                 <h3 id="signupTermsTitle" class="modal-title">Terms of Service &amp; Risk Sourcing Framework</h3>
             </div>
             <div id="signupTermsContent" class="legal-body"></div>
-            <p class="signup-terms-note">
-                We also recommend reading our <button type="button" onclick="openLegalModal('privacy')" class="text-accent-link">Privacy Policy</button>.
-            </p>
+            <div class="signup-terms-checks">
+                <label class="terms-check-label">
+                    <input type="checkbox" id="checkTerms">
+                    I have read and agree to the <button type="button" onclick="openLegalModal('terms')" class="text-accent-link">Terms of Service</button>
+                </label>
+                <label class="terms-check-label">
+                    <input type="checkbox" id="checkPrivacy">
+                    I have read and agree to the <button type="button" onclick="openLegalModal('privacy')" class="text-accent-link">Privacy Policy</button>
+                </label>
+                <label class="terms-check-label">
+                    <input type="checkbox" id="checkRisk">
+                    I understand that Novira Trade does not provide financial advice. All trading decisions are my sole responsibility.
+                </label>
+            </div>
             <div class="signup-terms-actions">
                 <button type="button" id="signupTermsDecline" class="btn btn-outline">Decline</button>
-                <button type="button" id="signupTermsAccept" class="btn btn-accent-sm">I Accept &amp; Continue</button>
+                <button type="button" id="signupTermsAccept" class="btn btn-accent-sm" disabled>I Accept &amp; Continue</button>
             </div>
         </div>
     </div>
