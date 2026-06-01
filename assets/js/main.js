@@ -1,6 +1,19 @@
 import { initAuth } from "./auth.js";
 import { db } from "./firebase.js";
 import { getCountFromServer, collection } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+async function loadUserCount() {
+  try {
+    const snap = await getCountFromServer(collection(db, "users"));
+    const count = snap.data().count;
+    const el = document.getElementById("userCountText");
+    if (el) el.textContent = `${count}+ users already on board`;
+  } catch {
+    const el = document.getElementById("userCountText");
+    if (el) el.textContent = "Join the growing community";
+  }
+}
+loadUserCount();
 import {
   closeAuthModal,
   closeLegalModal,
@@ -29,17 +42,4 @@ try {
   console.error("Auth initialization failed:", err);
 }
 
-// User Counter
-import { getCountFromServer, collection } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
-async function loadUserCount() {
-  try {
-    const snap = await getCountFromServer(collection(db, "users"));
-    const count = snap.data().count;
-    const el = document.getElementById("userCountText");
-    if (el) el.textContent = `${count}+ users already on board`;
-  } catch {
-    const el = document.getElementById("userCountText");
-    if (el) el.textContent = "Join the growing community";
-  }
-}
-loadUserCount();
+
