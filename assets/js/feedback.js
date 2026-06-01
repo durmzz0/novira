@@ -2,6 +2,10 @@ import { db, auth } from "./firebase.js";
 import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 
+const EMAILJS_SERVICE_ID = "service_fx27mnz";
+const EMAILJS_TEMPLATE_ID = "template_1v409g1";
+const EMAILJS_PUBLIC_KEY = "Ipi1Rf2bZWO844l6E";
+
 function initFeedback() {
   const form = document.getElementById("feedbackForm");
   const authMsg = document.getElementById("feedbackAuth");
@@ -43,6 +47,13 @@ function initFeedback() {
         createdAt: serverTimestamp(),
         status: "unread"
       });
+
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        email: user.email,
+        category: category,
+        message: text,
+        time: new Date().toLocaleString()
+      }, EMAILJS_PUBLIC_KEY);
 
       document.getElementById("feedbackText").value = "";
       successMsg?.classList.remove("hidden");
