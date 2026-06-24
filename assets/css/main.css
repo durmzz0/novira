@@ -1533,3 +1533,79 @@ button[disabled] {
 .social-link:hover {
     opacity: 1;
 }
+
+/* Free Banner Section */
+.section-free-banner {
+    background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(79,70,229,0.1));
+    border-top: 1px solid rgba(124,58,237,0.3);
+    border-bottom: 1px solid rgba(124,58,237,0.3);
+}
+
+.free-banner-wrap {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.free-banner-badge {
+    background: #7c3aed;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 0.3rem 1rem;
+    border-radius: 999px;
+}
+
+.free-banner-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.free-banner-desc {
+    font-size: 1rem;
+    opacity: 0.8;
+    line-height: 1.7;
+}
+
+.free-banner-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.free-tag {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+}
+
+.free-banner-maintenance {
+    margin-top: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.maintenance-note {
+    font-size: 0.9rem;
+    opacity: 0.75;
+}
+
+.maintenance-follow {
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
