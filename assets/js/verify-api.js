@@ -58,9 +58,10 @@ export async function verifyEmailCode(email, code) {
   return result.ok === true && result.status === "approved";
 }
 
-export function resetPassword(email, code) {
+export function resetPassword(email, code, newPassword) {
   return post("/verify/reset-password", {
     email: email.trim(),
     code: code.trim(),
+    newPassword: newPassword,
   });
 }

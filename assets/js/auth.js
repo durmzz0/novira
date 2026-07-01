@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
   updatePassword,
+  sendPasswordResetEmail,
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 import { auth, db } from "./firebase.js";
 import {
@@ -282,12 +283,10 @@ export function initAuth() {
     if (mode === "reset") {
       setAuthLoading(true, "authSendBtn");
       try {
-        const trimmedEmail = await sendEmailCode(email);
-        pendingAuth = { email: trimmedEmail, password: "", emailCode: "", firstName: "", lastName: "", birthDate: "", phone: "" };
-        setVerifyLabels(trimmedEmail);
-        showAuthStep(2);
+        await sendPasswordResetEmail(auth, email);
+        showAuthError("Password reset email sent. Please check your inbox.");
       } catch (err) {
-        showAuthError(err.message);
+        showAuthError(mapFirebaseError(err.code) || "Failed to send reset email.");
       } finally {
         setAuthLoading(false, "authSendBtn");
       }
