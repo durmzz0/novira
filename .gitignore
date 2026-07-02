@@ -1,2 +1,4 @@
 node_modules/
 NoviraTrade_v1.0.apk
+.wrangler/
+*.apk
