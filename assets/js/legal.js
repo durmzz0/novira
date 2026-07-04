@@ -5,7 +5,7 @@ export const legalData = {
       <p><strong>Effective Date:</strong> June 1, 2026</p>
 
       <p><strong>1. Data Controller</strong><br>
-      NOVIRA SOFT operates as the data controller for all information collected through the Novira Trade platform. By registering an account, you acknowledge and consent to the data practices described in this policy.</p>
+      NOVIRA SOFT operates as the data controller for all information collected through the Novira Trade platform. By registering an account, you acknowledge and consent to the data practices described in this policy. This policy is designed with reference to applicable data protection frameworks, including Turkey's Personal Data Protection Law (KVKK) and, where applicable, the EU General Data Protection Regulation (GDPR).</p>
 
       <p><strong>2. Data Collected</strong><br>
       We collect the following information solely for authentication and service delivery purposes: email address, encrypted device identifier (Hardware ID), first and last name, date of birth, and phone number. No financial data, payment credentials, or sensitive personal information beyond the above is stored on our servers.</p>
@@ -23,7 +23,7 @@ export const legalData = {
       User data is retained for the duration of account activity. Upon account deletion request, all personally identifiable information is permanently purged from our systems within 30 days.</p>
 
       <p><strong>7. User Rights</strong><br>
-      You have the right to access, correct, or request deletion of your personal data at any time by contacting us through our official channels. Requests will be processed within 30 days.</p>
+      In accordance with KVKK and, where applicable, GDPR, you have the right to access, correct, request deletion of, or object to the processing of your personal data at any time. To exercise these rights, please contact us at <a href="mailto:contact.novirasoft@gmail.com">contact.novirasoft@gmail.com</a>. Requests will be processed within 30 days.</p>
 
       <p><strong>8. Policy Updates</strong><br>
       This policy may be updated periodically. Continued use of the platform following any modifications constitutes acceptance of the revised terms.</p>
