@@ -99,6 +99,46 @@
             </div>
         </section>
 
+        <!-- ============ LIVE SIGNALS (NoviraTrade canli vitrin) ============ -->
+        <section id="live-signals" class="live-signals-section">
+            <div class="container">
+                <div class="live-head">
+                    <h2><span class="live-dot"></span>Live Signals</h2>
+                    <p>200+ coins scanned every 15 minutes · Same engine, same data as the app
+                       <span class="live-tier-badge" id="liveTierBadge">GUEST</span></p>
+                </div>
+
+                <div class="live-stats">
+                    <div class="live-stat rate"><b id="liveWinRate">—</b><span>Win Rate</span></div>
+                    <div class="live-stat"><b id="liveTotal">—</b><span>Total Signals</span></div>
+                    <div class="live-stat win"><b id="liveWins">—</b><span>Wins</span></div>
+                    <div class="live-stat loss"><b id="liveLosses">—</b><span>Losses</span></div>
+                    <div class="live-stat pend"><b id="livePending">—</b><span>Active</span></div>
+                </div>
+
+                <div class="live-lock-banner" id="liveLockBanner"></div>
+
+                <div class="live-filters" id="liveIvFilters">
+                    <button type="button" data-iv="ALL" class="active">All</button>
+                    <button type="button" data-iv="15m">15m</button>
+                    <button type="button" data-iv="1h">1H</button>
+                    <button type="button" data-iv="4h">4H</button>
+                    <button type="button" data-iv="1d">1D</button>
+                    <button type="button" data-iv="1w">1W</button>
+                </div>
+                <div class="live-filters" id="liveDirFilters">
+                    <button type="button" data-dir="ALL" class="active">Long + Short</button>
+                    <button type="button" data-dir="LONG">Long Only</button>
+                    <button type="button" data-dir="SHORT">Short Only</button>
+                </div>
+
+                <div id="liveSignalsList">
+                    <p class="sig-empty">Loading live signals…</p>
+                </div>
+            </div>
+        </section>
+
+
         <section class="section section-stats" id="performanceStats">
             <div class="container">
                 <div class="nv-stats-card">

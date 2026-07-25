@@ -1748,3 +1748,58 @@ button[disabled] {
 .disclaimer-link:hover {
     opacity: 1;
 }
+
+/* ============ LIVE SIGNALS (NoviraTrade vitrin) ============ */
+.live-signals-section{padding:64px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.live-head{text-align:center;margin-bottom:32px}
+.live-head h2{font-size:32px;font-weight:800;margin-bottom:8px}
+.live-head p{opacity:.65;font-size:15px}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#16d989;
+  display:inline-block;margin-right:6px;animation:livePulse 2s infinite;vertical-align:middle}
+@keyframes livePulse{0%,100%{opacity:1}50%{opacity:.3}}
+.live-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:28px}
+@media(max-width:760px){.live-stats{grid-template-columns:repeat(2,1fr)}}
+.live-stat{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;padding:18px 12px;text-align:center}
+.live-stat b{display:block;font-size:26px;font-weight:800;line-height:1.1}
+.live-stat span{display:block;font-size:11px;opacity:.55;margin-top:6px;
+  text-transform:uppercase;letter-spacing:.6px}
+.live-stat.win b{color:#16d989}
+.live-stat.loss b{color:#ff5a6e}
+.live-stat.pend b{color:#f5c518}
+.live-stat.rate b{color:#22d3ee}
+.live-lock-banner{display:none;background:linear-gradient(135deg,rgba(34,211,238,.12),rgba(22,217,137,.07));
+  border:1px solid rgba(34,211,238,.25);border-radius:12px;padding:14px 18px;
+  margin-bottom:18px;font-size:14px;cursor:pointer}
+.sig-link{color:#22d3ee;font-weight:600}
+.live-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.live-filters button{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);
+  color:rgba(255,255,255,.6);padding:7px 15px;border-radius:20px;font-size:13px;
+  font-weight:600;cursor:pointer;transition:.15s}
+.live-filters button.active{background:#22d3ee;color:#04121a;border-color:#22d3ee}
+.sig-group{margin-bottom:26px}
+.sig-group-head{font-size:15px;font-weight:800;color:#22d3ee;padding:10px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:12px;
+  display:flex;align-items:center;gap:10px}
+.sig-count{font-size:11px;font-weight:600;opacity:.5;background:rgba(255,255,255,.05);
+  padding:3px 9px;border-radius:12px}
+.sig-row{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:12px;padding:13px 16px;margin-bottom:8px}
+.sig-blur{filter:blur(5px);opacity:.45;pointer-events:none;user-select:none}
+.sig-dir{font-size:11px;font-weight:800;padding:4px 10px;border-radius:6px}
+.sig-LONG{background:rgba(22,217,137,.15);color:#16d989}
+.sig-SHORT{background:rgba(255,90,110,.15);color:#ff5a6e}
+.sig-coin{font-weight:700;font-size:15px}
+.sig-coin em{display:block;font-style:normal;font-size:11px;opacity:.5;font-weight:500}
+.sig-score{font-size:20px;font-weight:800;text-align:right}
+.sig-score em{display:block;font-style:normal;font-size:10px;opacity:.5;
+  font-weight:600;text-transform:uppercase}
+.sig-hot{color:#f5c518}
+.sig-unlock{width:100%;text-align:center;padding:13px;font-size:13px;color:#22d3ee;
+  background:rgba(255,255,255,.02);border:1px dashed rgba(34,211,238,.3);
+  border-radius:10px;margin-top:6px;font-weight:600;cursor:pointer;transition:.15s}
+.sig-unlock:hover{background:rgba(34,211,238,.08)}
+.sig-empty{text-align:center;opacity:.5;padding:40px}
+.live-tier-badge{font-size:11px;padding:3px 10px;border-radius:6px;
+  background:rgba(34,211,238,.15);color:#22d3ee;font-weight:700;margin-left:8px}

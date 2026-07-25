@@ -1,4 +1,5 @@
 import { initAuth } from "./auth.js";
+import { initLiveSignals } from "./signals.js";
 import { db } from "./firebase.js";
 import { getCountFromServer, collection } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
@@ -42,4 +43,8 @@ try {
   console.error("Auth initialization failed:", err);
 }
 
-
+try {
+  initLiveSignals();
+} catch (err) {
+  console.error("Live signals init failed:", err);
+}
