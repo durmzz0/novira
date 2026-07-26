@@ -1803,3 +1803,8 @@ button[disabled] {
 .sig-empty{text-align:center;opacity:.5;padding:40px}
 .live-tier-badge{font-size:11px;padding:3px 10px;border-radius:6px;
   background:rgba(34,211,238,.15);color:#22d3ee;font-weight:700;margin-left:8px}
+
+.live-launch-note{background:linear-gradient(135deg,rgba(245,197,24,.12),rgba(22,217,137,.08));
+  border:1px solid rgba(245,197,24,.28);border-radius:12px;padding:14px 18px;
+  margin-bottom:20px;font-size:14px;line-height:1.55;text-align:center}
+.live-launch-note strong{color:#f5c518}

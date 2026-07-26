@@ -146,13 +146,10 @@ export function initLiveSignals() {
   });
 
   onAuthStateChanged(auth, async (user) => {
-    if (user) {
-      activeTier = "FREE";
-      try {
-        const u = await getDoc(doc(db, "users", user.uid));
-        if (u.exists() && u.data().tier) activeTier = String(u.data().tier).toUpperCase();
-      } catch (_) {}
-    } else activeTier = "GUEST";
+    // LANSMAN MODU: kayitli her kullanici TUM sinyalleri gorur (51-100).
+    // Uygulama ile ayni — su an ucretsiz, 2027'de ucretli olacak.
+    if (user) activeTier = "ELITE";
+    else activeTier = "GUEST";
     render();
   });
 
