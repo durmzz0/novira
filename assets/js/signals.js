@@ -20,6 +20,8 @@ let allSignals = [];
 let ivFilter = "ALL";
 let dirFilter = "ALL";
 let stats = { wins: 0, losses: 0, pending: 0 };
+const PREVIEW = 5;                 // baslangicta ve her adimda kac sinyal
+const shownCount = {};             // her interval grubunda kac sinyal gosteriliyor
 
 const canView = (score) => {
   const t = TIERS[activeTier] || TIERS.GUEST;
@@ -83,9 +85,23 @@ function render() {
       open = locked.slice(-3);
       locked = locked.slice(0, locked.length - open.length);
     }
+    const cnt = shownCount[iv] || PREVIEW;
+    const shown = open.slice(0, cnt);
+    const remaining = open.length - shown.length;
     html += `<div class="sig-group">
       <div class="sig-group-head">${IV_NAME[iv] || iv}<span class="sig-count">${g.length} signals</span></div>
-      ${open.map(s => card(s)).join("")}`;
+      ${shown.map(s => card(s)).join("")}`;
+    if (remaining > 0 || cnt > PREVIEW) {
+      html += `<div class="sig-more-row">`;
+      if (remaining > 0) {
+        const next = Math.min(remaining, 5);
+        html += `<button type="button" class="sig-showmore" data-iv="${iv}" data-act="more">Show ${next} more</button>`;
+      }
+      if (cnt > PREVIEW) {
+        html += `<button type="button" class="sig-showmore sig-less" data-iv="${iv}" data-act="less">Collapse</button>`;
+      }
+      html += `</div>`;
+    }
     if (locked.length) {
       html += locked.slice(0, 2).map(s => card(s, true)).join("");
       html += `<button type="button" class="sig-unlock" data-auth-open="signup">
@@ -161,6 +177,16 @@ export function initLiveSignals() {
     document.querySelectorAll("#liveDirFilters [data-dir]").forEach(x => x.classList.remove("active"));
     b.classList.add("active"); dirFilter = b.dataset.dir; render();
   });
+  document.getElementById("liveSignalsList")?.addEventListener("click", (e) => {
+    const b = e.target.closest(".sig-showmore");
+    if (!b) return;
+    const iv = b.dataset.iv;
+    const cur = shownCount[iv] || PREVIEW;
+    if (b.dataset.act === "less") shownCount[iv] = PREVIEW;
+    else shownCount[iv] = cur + 5;
+    render();
+  });
+
   document.getElementById("liveLockBanner")?.addEventListener("click", () => {
     if (!auth.currentUser && window.openAuthModal) window.openAuthModal("signup");
   });
