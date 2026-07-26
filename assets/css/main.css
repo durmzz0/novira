@@ -1808,3 +1808,19 @@ button[disabled] {
   border:1px solid rgba(245,197,24,.28);border-radius:12px;padding:14px 18px;
   margin-bottom:20px;font-size:14px;line-height:1.55;text-align:center}
 .live-launch-note strong{color:#f5c518}
+
+/* Sinyal risk satiri (entry/SL/TP) */
+.sig-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:12px;margin-bottom:8px;overflow:hidden}
+.sig-card .sig-row{background:transparent;border:none;border-radius:0;margin:0}
+.sig-risk{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;
+  background:rgba(255,255,255,.06);border-top:1px solid rgba(255,255,255,.06)}
+@media(max-width:560px){.sig-risk{grid-template-columns:repeat(3,1fr)}}
+.sig-risk-item{background:rgba(10,14,26,.6);padding:8px 10px;text-align:center}
+.sig-risk-item span{display:block;font-size:9px;text-transform:uppercase;
+  letter-spacing:.5px;opacity:.5;margin-bottom:3px}
+.sig-risk-item b{font-size:13px;font-weight:700}
+.sig-risk-item.entry b{color:#22d3ee}
+.sig-risk-item.sl b{color:#ff5a6e}
+.sig-risk-item.tp b{color:#16d989}
+.sig-card.sig-blur{filter:blur(5px);opacity:.45;pointer-events:none}

@@ -30,15 +30,34 @@ const IV_ORDER = ["15m", "1h", "4h", "1d", "1w"];
 const IV_NAME  = { "15m":"15 Minutes", "1h":"1 Hour", "4h":"4 Hours", "1d":"1 Day", "1w":"1 Week" };
 const IV_SHORT = { "15m":"15m", "1h":"1H", "4h":"4H", "1d":"1D", "1w":"1W" };
 
+// Fiyat formati (uygulama fmt birebir): buyukse az ondalik, kucukse cok
+function fmtPrice(v) {
+  if (v == null) return "—";
+  if (v >= 10000) return v.toFixed(2);
+  if (v >= 1) return v.toFixed(4);
+  return v.toFixed(6);
+}
+
 function card(s, blurred = false) {
   const dir = s.direction || "LONG";
   const iv = IV_SHORT[s.interval] || s.interval;
   const sym = blurred ? "•••••" : (s.symbol || "").replace("USDT", "");
   const score = blurred ? "??" : (s.score || 0);
-  return `<div class="sig-row${blurred ? " sig-blur" : ""}">
-    <span class="sig-dir sig-${dir}">${dir === "LONG" ? "BUY" : "SELL"}</span>
-    <span class="sig-coin">${sym}<em>USDT · ${iv}</em></span>
-    <span class="sig-score${!blurred && score >= 90 ? " sig-hot" : ""}">${score}<em>score</em></span>
+  const hasRisk = !blurred && s.entry != null && s.sl != null && s.tp1 != null;
+  const risk = hasRisk ? `
+    <div class="sig-risk">
+      <div class="sig-risk-item entry"><span>Entry</span><b>${fmtPrice(s.entry)}</b></div>
+      <div class="sig-risk-item sl"><span>Stop Loss</span><b>${fmtPrice(s.sl)}</b></div>
+      <div class="sig-risk-item tp"><span>TP1</span><b>${fmtPrice(s.tp1)}</b></div>
+      <div class="sig-risk-item tp"><span>TP2</span><b>${fmtPrice(s.tp2)}</b></div>
+      <div class="sig-risk-item tp"><span>TP3</span><b>${fmtPrice(s.tp3)}</b></div>
+    </div>` : "";
+  return `<div class="sig-card${blurred ? " sig-blur" : ""}">
+    <div class="sig-row">
+      <span class="sig-dir sig-${dir}">${dir === "LONG" ? "BUY" : "SELL"}</span>
+      <span class="sig-coin">${sym}<em>USDT · ${iv}</em></span>
+      <span class="sig-score${!blurred && score >= 90 ? " sig-hot" : ""}">${score}<em>score</em></span>
+    </div>${risk}
   </div>`;
 }
 
@@ -123,6 +142,7 @@ async function loadSignals() {
     if (!snap.exists()) return;
     allSignals = (snap.data().sinyaller || []).map(x => ({
       symbol: x.symbol, direction: x.direction, interval: x.interval, score: x.score,
+      entry: x.entry, sl: x.sl, tp1: x.tp1, tp2: x.tp2, tp3: x.tp3,
     }));
     render();
   } catch (e) { console.error("signals", e); }
